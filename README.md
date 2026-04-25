@@ -1,4 +1,4 @@
-# SurvivalRPG v0.5.1-pre
+# SurvivalRPG v0.5.2-pre
 
 Custom game cooperativo de Dota 2 para hasta 5 jugadores.
 
@@ -42,6 +42,7 @@ Zonas 1 a 10 configuradas
 Mascotas visibles
 Boss roulette base
 Guardado temporal preparado para backend HTTP futuro
+Zona 0 limpia: enemigos se retiran, recuperan vida y retoman aggro fuera del refugio
 ```
 
 La documentacion larga de trabajo vive localmente en `docs/` y esta ignorada por Git para no subirla al repositorio publico.

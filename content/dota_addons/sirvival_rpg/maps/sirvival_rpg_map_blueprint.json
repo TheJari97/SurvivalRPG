@@ -12,9 +12,14 @@
     "radius": 950,
     "rules": [
       "Los jugadores regeneran vida y mana.",
-      "Los enemigos son expulsados si entran."
+      "Los enemigos son expulsados si entran.",
+      "Los enemigos recuperan vida al retirarse.",
+      "Si hay otro jugador fuera del refugio, el aggro debe pasar al mejor objetivo disponible."
     ]
   },
+  "current_priority": "Construir Zona 0 y Zona 1 completa antes de decorar el resto.",
+  "tile_editor_recommendation": "Usar Standard/default Dota tilesets. No usar Custom tilesets en la primera version.",
+  "talent_tree_note": "El arbol de talentos sera un sistema de progresion separado. No reemplaza los caminos fisicos del mapa.",
   "layout_order": [
     "Zona 0: Hub seguro",
     "Zona 1: Ruinas del Aprendiz",

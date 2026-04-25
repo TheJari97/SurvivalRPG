@@ -54,6 +54,7 @@ function SurvivalRPG:InitGameMode()
 
     PlayerProgressionSystem:Init(self)
     PlayerLifeSystem:Init(self)
+    ThreatSystem:Init(self)
     SafeZoneSystem:Init(self)
     WorldLevelSystem:Init(self)
     ZoneSystem:Init(self)

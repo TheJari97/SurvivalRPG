@@ -2,7 +2,7 @@
 {
     "addonSteamAppID"       "570"
     "addontitle"            "SurvivalRPG"
-    "addonversion"          "0.5.1-pre"
+    "addonversion"          "0.5.2-pre"
     "addontagline"          "Survival RPG cooperativo por zonas con progreso, drops, crafteo, artefactos y mascotas."
     "addonauthor"           "Juan + Codex"
     "maps"                  "sirvival_rpg"

@@ -44,7 +44,7 @@ function SafeZoneSystem:Think()
         DOTA_TEAM_GOODGUYS,
         origin,
         nil,
-        radius,
+        radius + 500,
         DOTA_UNIT_TARGET_TEAM_ENEMY,
         DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
         DOTA_UNIT_TARGET_FLAG_NONE,
@@ -53,13 +53,28 @@ function SafeZoneSystem:Think()
     )
 
     for _, enemy in pairs(enemies) do
-        local direction = enemy:GetAbsOrigin() - origin
-        if direction:Length2D() < 1 then
-            direction = RandomVector(1)
-        else
-            direction = direction:Normalized()
+        local distance = (enemy:GetAbsOrigin() - origin):Length2D()
+        local aggroTarget = nil
+        if enemy.GetAggroTarget then
+            local ok, target = pcall(function() return enemy:GetAggroTarget() end)
+            if ok then aggroTarget = target end
         end
-        FindClearSpaceForUnit(enemy, origin + direction * (radius + 300), true)
-        enemy:MoveToPositionAggressive(origin + direction * (radius + 700))
+        local targetInSafeZone = aggroTarget and aggroTarget:IsRealHero() and (aggroTarget:GetAbsOrigin() - origin):Length2D() <= radius
+
+        if distance <= radius or targetInSafeZone then
+            if ThreatSystem then
+                ThreatSystem:ResetEnemyForSafeZone(enemy, origin, radius)
+            else
+                local direction = enemy:GetAbsOrigin() - origin
+                if direction:Length2D() < 1 then
+                    direction = RandomVector(1)
+                else
+                    direction = direction:Normalized()
+                end
+                enemy:SetHealth(enemy:GetMaxHealth())
+                FindClearSpaceForUnit(enemy, origin + direction * (radius + 300), true)
+                enemy:MoveToPositionAggressive(origin + direction * (radius + 700))
+            end
+        end
     end
 end
