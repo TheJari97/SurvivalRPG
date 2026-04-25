@@ -12,11 +12,13 @@ require("config/artifact_config")
 require("config/pet_config")
 require("config/season_config")
 require("config/boss_mechanics_config")
+require("config/save_backend_config")
 
 require("abilities/sirv_abilities")
 require("items/sirv_items")
 
 require("systems/sirv_utils")
+require("systems/json_utils")
 require("systems/player_progression_system")
 require("systems/player_life_system")
 require("systems/safe_zone_system")

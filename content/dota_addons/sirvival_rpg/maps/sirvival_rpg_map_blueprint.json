@@ -28,5 +28,9 @@
     "Zona 9: Campos Primordiales",
     "Zona 10: Corona del Fin"
   ],
-  "design_rule": "Construir primero Zona 0 y Zona 1. Probar. Luego ampliar una zona por iteracion."
+  "design_rule": "Construir primero Zona 0 y Zona 1. Probar. Luego ampliar una zona por iteracion.",
+  "construction_reference": {
+    "source": "Titanbreaker-master.zip local reference",
+    "lesson": "Usar mapa principal + prefabs reutilizables + entidades con nombres exactos. No copiar contenido visual."
+  }
 }

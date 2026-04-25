@@ -10,6 +10,7 @@
         "srpg_pets" "Mascotas"
         "srpg_world_level" "Nivel de Mundo"
         "srpg_season" "Temporada"
+        "srpg_save_now" "Guardar ahora"
         "npc_dota_hero_axe" "Guardián de Hierro"
         "npc_dota_hero_centaur" "Coloso Juramentado"
         "npc_dota_hero_sven" "Berserker Carmesí"

@@ -10,6 +10,7 @@
         "srpg_pets" "Pets"
         "srpg_world_level" "World Level"
         "srpg_season" "Season"
+        "srpg_save_now" "Save now"
         "npc_dota_hero_axe" "Iron Guardian"
         "npc_dota_hero_centaur" "Oathbound Colossus"
         "npc_dota_hero_sven" "Crimson Berserker"

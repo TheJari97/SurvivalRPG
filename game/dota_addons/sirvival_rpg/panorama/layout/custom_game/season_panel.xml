@@ -5,5 +5,6 @@
             <Button id="SeasonPanelClose" class="srpg-close"><Label text="X" /></Button>
         </Panel>
         <Panel id="SeasonList" class="srpg-panel-list" />
+        <Button id="SeasonManualSave" class="srpg-row"><Label text="#srpg_save_now" /></Button>
     </Panel>
 </root>

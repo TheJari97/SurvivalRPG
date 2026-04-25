@@ -89,6 +89,7 @@ function SurvivalRPG:OnNPCSpawned(event)
         unit.srpg_initialized = true
         local playerID = unit:GetPlayerOwnerID()
         PlayerProgressionSystem:InitializePlayer(playerID)
+        SaveSystem:RequestLoad(playerID)
         local spawnName = "spawn_player_" .. tostring(playerID + 1)
         local origin = SirvUtils:FindEntityOrigin(spawnName, unit:GetAbsOrigin())
         FindClearSpaceForUnit(unit, origin, true)
