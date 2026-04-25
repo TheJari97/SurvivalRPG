@@ -1,0 +1,26 @@
+# Local documentation generated for the project owner.
+/docs/
+/content/**/README*.md
+/game/**/README*.md
+/content/**/maps/*NO_SE_GENERA_A_MANO.txt
+
+# Generated packages and temporary build output.
+*.zip
+/_build/
+
+# Local runtime/cache noise.
+__pycache__/
+*.pyc
+*.log
+
+# Dota 2 generated/compiled outputs.
+*.vmap_c
+*.vpk
+*.vpk.sound.cache
+*.tmp
+
+# Editor and OS files.
+.vs/
+.vscode/
+Thumbs.db
+Desktop.ini

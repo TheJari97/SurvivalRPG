@@ -1,0 +1,15 @@
+"custom_net_tables"
+{
+    "game_state" "1"
+    "player_progress" "1"
+    "world_level_data" "1"
+    "zone_data" "1"
+    "shop_data" "1"
+    "crafting_data" "1"
+    "artifact_data" "1"
+    "pet_data" "1"
+    "season_data" "1"
+    "sirvival_state" "1"
+    "sirvival_catalog" "1"
+    "sirvival_save" "1"
+}

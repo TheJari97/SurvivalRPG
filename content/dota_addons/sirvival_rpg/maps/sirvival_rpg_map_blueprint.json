@@ -1,0 +1,32 @@
+{
+  "map_name": "sirvival_rpg",
+  "playable_area_tiles": {
+    "width": 96,
+    "height": 72
+  },
+  "note": "No se genera .vmap falso. Crear y compilar en Hammer.",
+  "safe_zone": {
+    "id": 0,
+    "name": "Refugio Inicial",
+    "center_entity": "respawn_hub",
+    "radius": 950,
+    "rules": [
+      "Los jugadores regeneran vida y mana.",
+      "Los enemigos son expulsados si entran."
+    ]
+  },
+  "layout_order": [
+    "Zona 0: Hub seguro",
+    "Zona 1: Ruinas del Aprendiz",
+    "Zona 2: Bosque Corrupto",
+    "Zona 3: Cripta Antigua",
+    "Zona 4: Bastion Maldito",
+    "Zona 5: Trono del Titan",
+    "Zona 6: Pantano de los Juramentos",
+    "Zona 7: Forja Demoniaca",
+    "Zona 8: Catedral Abisal",
+    "Zona 9: Campos Primordiales",
+    "Zona 10: Corona del Fin"
+  ],
+  "design_rule": "Construir primero Zona 0 y Zona 1. Probar. Luego ampliar una zona por iteracion."
+}

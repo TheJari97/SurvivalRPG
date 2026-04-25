@@ -1,0 +1,9 @@
+<root>
+    <Panel id="SeasonPanel" class="srpg-panel srpg-hidden">
+        <Panel class="srpg-panel-header">
+            <Label text="#srpg_season" class="srpg-panel-title" />
+            <Button id="SeasonPanelClose" class="srpg-close"><Label text="X" /></Button>
+        </Panel>
+        <Panel id="SeasonList" class="srpg-panel-list" />
+    </Panel>
+</root>

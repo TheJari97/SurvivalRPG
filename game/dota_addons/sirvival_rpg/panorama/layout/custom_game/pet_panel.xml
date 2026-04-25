@@ -1,0 +1,9 @@
+<root>
+    <Panel id="PetPanel" class="srpg-panel srpg-hidden">
+        <Panel class="srpg-panel-header">
+            <Label text="#srpg_pets" class="srpg-panel-title" />
+            <Button id="PetPanelClose" class="srpg-close"><Label text="X" /></Button>
+        </Panel>
+        <Panel id="PetList" class="srpg-panel-list" />
+    </Panel>
+</root>

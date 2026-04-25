@@ -1,0 +1,3680 @@
+"DOTAAbilities"
+{
+    "item_sirv_basic_weapon"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "250"
+        "ItemPurchasable" "1"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "8"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "20"
+            }
+        }
+    }
+    "item_sirv_basic_head"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "250"
+        "ItemPurchasable" "1"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "2"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "20"
+            }
+        }
+    }
+    "item_sirv_basic_chest"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "250"
+        "ItemPurchasable" "1"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "120"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "20"
+            }
+        }
+    }
+    "item_sirv_basic_cape"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "250"
+        "ItemPurchasable" "1"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "4"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "20"
+            }
+        }
+    }
+    "item_sirv_basic_boots"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "250"
+        "ItemPurchasable" "1"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "22"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "20"
+            }
+        }
+    }
+    "item_sirv_basic_relic"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "250"
+        "ItemPurchasable" "1"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "3"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "20"
+            }
+        }
+    }
+    "item_sirv_basic_backpack"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "250"
+        "ItemPurchasable" "1"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "2"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "2"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "20"
+            }
+        }
+    }
+    "item_sirv_common_weapon"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "10"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "27"
+            }
+        }
+    }
+    "item_sirv_common_head"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "2"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "27"
+            }
+        }
+    }
+    "item_sirv_common_chest"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "162"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "27"
+            }
+        }
+    }
+    "item_sirv_common_cape"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "5"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "27"
+            }
+        }
+    }
+    "item_sirv_common_boots"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "29"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "27"
+            }
+        }
+    }
+    "item_sirv_common_relic"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "4"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "27"
+            }
+        }
+    }
+    "item_sirv_common_backpack"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "2"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "2"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "27"
+            }
+        }
+    }
+    "item_sirv_rare_weapon"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "15"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "38"
+            }
+        }
+    }
+    "item_sirv_rare_head"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "3"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "38"
+            }
+        }
+    }
+    "item_sirv_rare_chest"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "228"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "38"
+            }
+        }
+    }
+    "item_sirv_rare_cape"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "7"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "38"
+            }
+        }
+    }
+    "item_sirv_rare_boots"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "41"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "38"
+            }
+        }
+    }
+    "item_sirv_rare_relic"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "5"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "38"
+            }
+        }
+    }
+    "item_sirv_rare_backpack"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "3"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "3"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "38"
+            }
+        }
+    }
+    "item_sirv_epic_weapon"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "21"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "53"
+            }
+        }
+    }
+    "item_sirv_epic_head"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "5"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "53"
+            }
+        }
+    }
+    "item_sirv_epic_chest"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "318"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "53"
+            }
+        }
+    }
+    "item_sirv_epic_cape"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "10"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "53"
+            }
+        }
+    }
+    "item_sirv_epic_boots"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "58"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "53"
+            }
+        }
+    }
+    "item_sirv_epic_relic"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "7"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "53"
+            }
+        }
+    }
+    "item_sirv_epic_backpack"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "5"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "5"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "53"
+            }
+        }
+    }
+    "item_sirv_legendary_weapon"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "30"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "75"
+            }
+        }
+    }
+    "item_sirv_legendary_head"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "7"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "75"
+            }
+        }
+    }
+    "item_sirv_legendary_chest"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "450"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "75"
+            }
+        }
+    }
+    "item_sirv_legendary_cape"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "15"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "75"
+            }
+        }
+    }
+    "item_sirv_legendary_boots"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "82"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "75"
+            }
+        }
+    }
+    "item_sirv_legendary_relic"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "11"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "75"
+            }
+        }
+    }
+    "item_sirv_legendary_backpack"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "7"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "7"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "75"
+            }
+        }
+    }
+    "item_sirv_mythic_weapon"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "40"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "102"
+            }
+        }
+    }
+    "item_sirv_mythic_head"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "10"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "102"
+            }
+        }
+    }
+    "item_sirv_mythic_chest"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "612"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "102"
+            }
+        }
+    }
+    "item_sirv_mythic_cape"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "20"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "102"
+            }
+        }
+    }
+    "item_sirv_mythic_boots"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "112"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "102"
+            }
+        }
+    }
+    "item_sirv_mythic_relic"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "15"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "102"
+            }
+        }
+    }
+    "item_sirv_mythic_backpack"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "10"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "10"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "102"
+            }
+        }
+    }
+    "item_sirv_divine_weapon"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "54"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "136"
+            }
+        }
+    }
+    "item_sirv_divine_head"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "13"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "136"
+            }
+        }
+    }
+    "item_sirv_divine_chest"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "816"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "136"
+            }
+        }
+    }
+    "item_sirv_divine_cape"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "27"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "136"
+            }
+        }
+    }
+    "item_sirv_divine_boots"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "149"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "136"
+            }
+        }
+    }
+    "item_sirv_divine_relic"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "20"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "136"
+            }
+        }
+    }
+    "item_sirv_divine_backpack"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "13"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "13"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "136"
+            }
+        }
+    }
+    "item_sirv_material_iron_fragment"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "0"
+            }
+        }
+    }
+    "item_sirv_material_arcane_dust"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "0"
+            }
+        }
+    }
+    "item_sirv_material_wild_essence"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "0"
+            }
+        }
+    }
+    "item_sirv_material_elite_core"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "0"
+            }
+        }
+    }
+    "item_sirv_material_boss_mark"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "0"
+            }
+        }
+    }
+    "item_sirv_material_ancient_gem"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "0"
+            }
+        }
+    }
+    "item_sirv_material_titan_blood"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "0"
+            }
+        }
+    }
+    "item_sirv_material_divine_fragment"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "0"
+            }
+        }
+    }
+    "item_sirv_artifact_wall_heart"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "8"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "120"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "8"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "80"
+            }
+        }
+    }
+    "item_sirv_artifact_dawn_tear"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "8"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "120"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "8"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "80"
+            }
+        }
+    }
+    "item_sirv_artifact_void_eye"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "8"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "120"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "8"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "80"
+            }
+        }
+    }
+    "item_sirv_artifact_eclipse_claw"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "8"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "120"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "8"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "80"
+            }
+        }
+    }
+    "item_sirv_artifact_titan_seed"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "8"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "120"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "8"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "80"
+            }
+        }
+    }
+    "item_sirv_pet_collar"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "2"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "20"
+            }
+        }
+    }
+    "item_sirv_pet_armor"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "2"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "20"
+            }
+        }
+    }
+    "item_sirv_pet_claws"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "2"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "20"
+            }
+        }
+    }
+    "item_sirv_pet_talisman"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "2"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "20"
+            }
+        }
+    }
+    "item_sirv_pet_emblem"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost" "0"
+        "ItemPurchasable" "0"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "2"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "20"
+            }
+        }
+    }
+    "item_sirv_potion_small"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "ItemCost" "90"
+        "ItemPurchasable" "1"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO"
+        "AbilityCastRange" "300"
+        "AbilityCooldown" "20"
+        "AbilityManaCost" "0"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "0"
+            }
+            "09"
+            {
+                "var_type" "FIELD_INTEGER"
+                "heal" "300"
+            }
+        }
+    }
+    "item_sirv_potion_mana"
+    {
+        "BaseClass" "item_lua"
+        "ScriptFile" "items/sirv_items.lua"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "ItemCost" "80"
+        "ItemPurchasable" "1"
+        "ItemSellable" "1"
+        "ItemShareability" "ITEM_FULLY_SHAREABLE"
+        "AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO"
+        "AbilityCastRange" "300"
+        "AbilityCooldown" "20"
+        "AbilityManaCost" "0"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_damage" "0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_armor" "0"
+            }
+            "03"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_health" "0"
+            }
+            "04"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_resist" "0"
+            }
+            "05"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_ms" "0"
+            }
+            "06"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_primary" "0"
+            }
+            "07"
+            {
+                "var_type" "FIELD_INTEGER"
+                "bonus_bag" "0"
+            }
+            "08"
+            {
+                "var_type" "FIELD_INTEGER"
+                "gear_score" "0"
+            }
+            "09"
+            {
+                "var_type" "FIELD_INTEGER"
+                "mana" "220"
+            }
+        }
+    }
+}

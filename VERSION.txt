@@ -1,0 +1,4 @@
+sirvival_rpg_dota_v05_pre
+version=0.5.0-pre
+public_name=SurvivalRPG
+internal_addon=sirvival_rpg

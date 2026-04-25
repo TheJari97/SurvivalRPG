@@ -1,0 +1,31 @@
+ItemTierConfig = {
+    rarities = {
+        "basic",
+        "common",
+        "rare",
+        "epic",
+        "legendary",
+        "mythic",
+        "divine",
+    },
+    rarity_display_es = {
+        ["basic"] = "Básico",
+        ["common"] = "Común",
+        ["rare"] = "Raro",
+        ["epic"] = "Épico",
+        ["legendary"] = "Legendario",
+        ["mythic"] = "Mítico",
+        ["divine"] = "Divino",
+    },
+    tiers = { 1, 2, 3, 4, 5 },
+    lineages = { "standard", "ancient", "corrupt", "astral", "primordial" },
+    slots = {
+        "weapon",
+        "head",
+        "chest",
+        "cape",
+        "boots",
+        "relic",
+        "backpack",
+    },
+}

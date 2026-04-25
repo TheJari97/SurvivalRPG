@@ -1,0 +1,115 @@
+BossSystem = BossSystem or {}
+
+function BossSystem:Init(gameMode)
+    self.gameMode = gameMode
+    self.killed = {}
+    self.active_bosses = {}
+end
+
+function BossSystem:OnBossSpawned(unit, category, zone)
+    if not unit then return end
+    unit.srpg_mechanics = self:RollMechanics(category, zone)
+    self.active_bosses[unit:entindex()] = unit.srpg_mechanics
+    self:StartMechanicThink(unit)
+end
+
+function BossSystem:RollMechanics(category, zone)
+    local mechanics = {}
+    local count = 1
+    if category == "area_boss" then count = zone >= 5 and 3 or 2 end
+    if category == "zone_boss" then count = math.min(5, 2 + math.floor(zone / 2)) end
+
+    local pools = { "weak", "common" }
+    if zone >= 3 then table.insert(pools, "strong") end
+    if zone >= 7 then table.insert(pools, "strong") end
+
+    local used = {}
+    while #mechanics < count do
+        local poolName = pools[RandomInt(1, #pools)]
+        local pool = BossMechanicsConfig[poolName] or BossMechanicsConfig.weak
+        local pick = pool[RandomInt(1, #pool)]
+        if pick and not used[pick.id] then
+            used[pick.id] = true
+            table.insert(mechanics, pick)
+        end
+    end
+    return mechanics
+end
+
+function BossSystem:StartMechanicThink(unit)
+    Timers:CreateTimer(2.0, function()
+        if not unit or unit:IsNull() or not unit:IsAlive() then return nil end
+        local mechanics = unit.srpg_mechanics or {}
+        for _, mechanic in pairs(mechanics) do
+            mechanic._next_cast = mechanic._next_cast or GameRules:GetGameTime() + RandomFloat(3, mechanic.cooldown or 10)
+            if GameRules:GetGameTime() >= mechanic._next_cast then
+                self:CastMechanic(unit, mechanic)
+                mechanic._next_cast = GameRules:GetGameTime() + (mechanic.cooldown or 12)
+            end
+        end
+        return 1.0
+    end)
+end
+
+function BossSystem:CastMechanic(unit, mechanic)
+    if mechanic.type == "summon" then
+        local summonName = "npc_sirv_z" .. math.min(unit.srpg_zone or 1, 5) .. "_melee"
+        for i = 1, mechanic.count or 2 do
+            local summon = CreateUnitByName(summonName, unit:GetAbsOrigin() + RandomVector(RandomInt(120, 260)), true, nil, nil, DOTA_TEAM_BADGUYS)
+            if summon and EnemySpawnSystem then
+                summon.srpg_category = "common"
+                summon.srpg_zone = unit.srpg_zone
+                EnemySpawnSystem:ScaleUnit(summon)
+            end
+        end
+        return
+    end
+
+    if mechanic.type == "enrage" then
+        unit:AddNewModifier(unit, nil, "modifier_sirv_boss_enrage", { duration = mechanic.duration or 8 })
+        return
+    end
+
+    local radius = mechanic.radius or 360
+    local enemies = FindUnitsInRadius(
+        unit:GetTeamNumber(),
+        unit:GetAbsOrigin(),
+        nil,
+        radius,
+        DOTA_UNIT_TARGET_TEAM_ENEMY,
+        DOTA_UNIT_TARGET_HERO,
+        DOTA_UNIT_TARGET_FLAG_NONE,
+        FIND_ANY_ORDER,
+        false
+    )
+    for _, target in pairs(enemies) do
+        ApplyDamage({
+            victim = target,
+            attacker = unit,
+            damage = (mechanic.damage or 80) * (WorldLevelSystem:GetEnemyDamageModifier() or 1),
+            damage_type = DAMAGE_TYPE_MAGICAL,
+            ability = nil,
+        })
+    end
+end
+
+function BossSystem:OnUnitKilled(unit, attacker)
+    if not unit or not unit.srpg_boss_key then return end
+    local flag = unit.srpg_boss_key
+    self.killed[flag] = true
+    ZoneSystem:MarkBossKilled(flag)
+    if attacker and attacker.GetPlayerOwnerID then
+        PlayerProgressionSystem:SetBossFlag(attacker:GetPlayerOwnerID(), flag)
+    end
+    CustomNetTables:SetTableValue("game_state", "bosses", self.killed)
+end
+
+LinkLuaModifier("modifier_sirv_boss_enrage", "systems/boss_system.lua", LUA_MODIFIER_MOTION_NONE)
+modifier_sirv_boss_enrage = class({})
+function modifier_sirv_boss_enrage:IsHidden() return false end
+function modifier_sirv_boss_enrage:IsPurgable() return false end
+function modifier_sirv_boss_enrage:DeclareFunctions()
+    return { MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT }
+end
+function modifier_sirv_boss_enrage:GetModifierBaseDamageOutgoing_Percentage() return 35 end
+function modifier_sirv_boss_enrage:GetModifierAttackSpeedBonus_Constant() return 55 end

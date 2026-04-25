@@ -1,0 +1,24 @@
+"CustomEvents"
+{
+    "open_shop" { "PlayerID" "short" }
+    "buy_shop_item" { "PlayerID" "short" "item" "string" }
+    "open_crafting" { "PlayerID" "short" }
+    "craft_item" { "PlayerID" "short" "recipe" "string" }
+    "open_artifacts" { "PlayerID" "short" }
+    "upgrade_artifact" { "PlayerID" "short" "artifact" "string" }
+    "open_pets" { "PlayerID" "short" }
+    "equip_pet" { "PlayerID" "short" "pet" "string" }
+    "upgrade_pet" { "PlayerID" "short" "pet" "string" }
+    "open_world_level" { "PlayerID" "short" }
+    "select_world_level" { "PlayerID" "short" "level" "short" }
+    "open_season_panel" { "PlayerID" "short" }
+    "request_player_progress" { "PlayerID" "short" }
+    "request_zone_entry" { "PlayerID" "short" "zone" "short" }
+    "srpg_toast" { "message" "string" "style" "string" }
+
+    "sirv_buy_basic_item" { "PlayerID" "short" "item" "string" }
+    "sirv_craft_item" { "PlayerID" "short" "recipe" "string" }
+    "sirv_request_save" { "PlayerID" "short" }
+    "sirv_request_zone_unlock" { "PlayerID" "short" "zone" "short" }
+    "sirv_toast" { "message" "string" "style" "string" }
+}

@@ -1,0 +1,18 @@
+"CustomHeroList"
+{
+    "npc_dota_hero_axe" "1"
+    "npc_dota_hero_centaur" "1"
+    "npc_dota_hero_sven" "1"
+    "npc_dota_hero_bristleback" "1"
+    "npc_dota_hero_omniknight" "1"
+    "npc_dota_hero_phantom_assassin" "1"
+    "npc_dota_hero_riki" "1"
+    "npc_dota_hero_juggernaut" "1"
+    "npc_dota_hero_drow_ranger" "1"
+    "npc_dota_hero_windrunner" "1"
+    "npc_dota_hero_crystal_maiden" "1"
+    "npc_dota_hero_lina" "1"
+    "npc_dota_hero_oracle" "1"
+    "npc_dota_hero_dazzle" "1"
+    "npc_dota_hero_shadow_shaman" "1"
+}

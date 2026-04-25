@@ -1,0 +1,17 @@
+<root>
+    <Panel id="SRPGHud" class="srpg-hud">
+        <Panel class="srpg-topbar">
+            <Label id="SRPGTitle" text="#addon_game_name" class="srpg-title" />
+            <Label id="SRPGState" text="Zona 1 | Mundo 1 | Vidas -" class="srpg-state" />
+            <Panel class="srpg-buttons">
+                <Button id="OpenShop" class="srpg-icon-button"><Label text="#srpg_shop" /></Button>
+                <Button id="OpenCrafting" class="srpg-icon-button"><Label text="#srpg_crafting" /></Button>
+                <Button id="OpenArtifacts" class="srpg-icon-button"><Label text="#srpg_artifacts" /></Button>
+                <Button id="OpenPets" class="srpg-icon-button"><Label text="#srpg_pets" /></Button>
+                <Button id="OpenWorldLevel" class="srpg-icon-button"><Label text="#srpg_world_level" /></Button>
+                <Button id="OpenSeason" class="srpg-icon-button"><Label text="#srpg_season" /></Button>
+            </Panel>
+        </Panel>
+        <Panel id="SRPGToastPanel" class="srpg-toast-panel" />
+    </Panel>
+</root>

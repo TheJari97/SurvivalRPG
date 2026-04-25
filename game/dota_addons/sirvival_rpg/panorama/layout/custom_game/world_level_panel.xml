@@ -1,0 +1,9 @@
+<root>
+    <Panel id="WorldLevelPanel" class="srpg-panel srpg-hidden">
+        <Panel class="srpg-panel-header">
+            <Label text="#srpg_world_level" class="srpg-panel-title" />
+            <Button id="WorldLevelPanelClose" class="srpg-close"><Label text="X" /></Button>
+        </Panel>
+        <Panel id="WorldLevelList" class="srpg-panel-list" />
+    </Panel>
+</root>
