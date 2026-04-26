@@ -27,6 +27,12 @@ function Precache(context)
     PrecacheUnitByNameSync("npc_sirv_pet_grove_sprite", context)
     PrecacheUnitByNameSync("npc_sirv_pet_runic_turtle", context)
     PrecacheUnitByNameSync("npc_sirv_pet_clockwork_beetle", context)
+    PrecacheUnitByNameSync("npc_sirv_z1_melee", context)
+    PrecacheUnitByNameSync("npc_sirv_z1_ranged", context)
+    PrecacheUnitByNameSync("npc_sirv_z1_caster", context)
+    PrecacheUnitByNameSync("npc_sirv_z1_tank", context)
+    PrecacheUnitByNameSync("npc_sirv_z1_healer", context)
+    PrecacheUnitByNameSync("npc_sirv_z1_skirmisher", context)
 end
 
 function Activate()
@@ -119,6 +125,7 @@ function SurvivalRPG:OnEntityKilled(event)
     if killed:GetTeamNumber() == DOTA_TEAM_BADGUYS then
         BossSystem:OnUnitKilled(killed, attacker)
         DropSystem:RollDrop(killed, attacker)
+        EnemySpawnSystem:OnUnitKilled(killed)
         if attacker and attacker.GetPlayerOwnerID then
             QuestSystem:OnEnemyKilled(attacker:GetPlayerOwnerID(), killed)
         end

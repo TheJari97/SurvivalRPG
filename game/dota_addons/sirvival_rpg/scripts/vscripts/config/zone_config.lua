@@ -13,9 +13,9 @@ ZoneConfig = {
         units = {},
     },
     [1] = {
-        name_es = "Ruinas del Aprendiz",
-        name_en = "Apprentice Ruins",
-        theme = "medieval ruins",
+        name_es = "Bosque Suave",
+        name_en = "Gentle Grove",
+        theme = "soft forest",
         min_level = 1,
         world_level = 1,
         gear_score = 0,
@@ -25,7 +25,14 @@ ZoneConfig = {
         elite_spawn = "zone_1_elite_spawn",
         area_boss_spawn = "area_boss_1_spawn",
         zone_boss_spawn = "zone_boss_1_spawn",
-        units = { "npc_sirv_z1_melee", "npc_sirv_z1_ranged", "npc_sirv_z1_caster" },
+        units = {
+            "npc_sirv_z1_melee",
+            "npc_sirv_z1_ranged",
+            "npc_sirv_z1_caster",
+            "npc_sirv_z1_tank",
+            "npc_sirv_z1_healer",
+            "npc_sirv_z1_skirmisher",
+        },
     },
     [2] = {
         name_es = "Bosque Corrupto",

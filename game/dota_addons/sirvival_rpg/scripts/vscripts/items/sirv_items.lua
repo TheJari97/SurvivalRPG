@@ -4,7 +4,9 @@ LinkLuaModifier("modifier_item_sirv_generic", "items/sirv_items.lua", LUA_MODIFI
 
 local function ItemSpecial(item, key)
     if not item then return 0 end
-    return item:GetSpecialValueFor(key) or 0
+    local ok, value = pcall(function() return item:GetSpecialValueFor(key) end)
+    if ok and value then return value end
+    return 0
 end
 
 function SurvivalItems:UseConsumable(item)
@@ -23,7 +25,20 @@ function modifier_item_sirv_generic:IsHidden() return true end
 function modifier_item_sirv_generic:IsPurgable() return false end
 function modifier_item_sirv_generic:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_item_sirv_generic:DeclareFunctions()
-    return { MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_HEALTH_BONUS, MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS, MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS }
+    return {
+        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+        MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+        MODIFIER_PROPERTY_HEALTH_BONUS,
+        MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
+        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+        MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+        MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+        MODIFIER_PROPERTY_ATTACK_RANGE_BONUS,
+        MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_SOURCE,
+        MODIFIER_PROPERTY_EVASION_CONSTANT,
+    }
 end
 function modifier_item_sirv_generic:GetModifierPreAttack_BonusDamage() return ItemSpecial(self:GetAbility(), "bonus_damage") end
 function modifier_item_sirv_generic:GetModifierPhysicalArmorBonus() return ItemSpecial(self:GetAbility(), "bonus_armor") end
@@ -33,6 +48,10 @@ function modifier_item_sirv_generic:GetModifierMoveSpeedBonus_Constant() return 
 function modifier_item_sirv_generic:GetModifierBonusStats_Strength() return ItemSpecial(self:GetAbility(), "bonus_primary") end
 function modifier_item_sirv_generic:GetModifierBonusStats_Agility() return ItemSpecial(self:GetAbility(), "bonus_primary") end
 function modifier_item_sirv_generic:GetModifierBonusStats_Intellect() return ItemSpecial(self:GetAbility(), "bonus_primary") end
+function modifier_item_sirv_generic:GetModifierAttackSpeedBonus_Constant() return ItemSpecial(self:GetAbility(), "bonus_attack_speed") end
+function modifier_item_sirv_generic:GetModifierAttackRangeBonus() return ItemSpecial(self:GetAbility(), "bonus_attack_range") end
+function modifier_item_sirv_generic:GetModifierHealAmplify_PercentageSource() return ItemSpecial(self:GetAbility(), "heal_amp") end
+function modifier_item_sirv_generic:GetModifierEvasion_Constant() return ItemSpecial(self:GetAbility(), "evasion") end
 
 item_sirv_basic_weapon = class({})
 function item_sirv_basic_weapon:GetIntrinsicModifierName() if self:GetAbilityName():find('potion') then return nil end return "modifier_item_sirv_generic" end

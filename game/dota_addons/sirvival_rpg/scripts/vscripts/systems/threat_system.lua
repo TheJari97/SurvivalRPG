@@ -30,9 +30,28 @@ function ThreatSystem:OnEntityHurt(keys)
     if playerID == nil or playerID < 0 then return end
 
     local damage = tonumber(keys.damage or keys.damage_amount or 1) or 1
+    damage = damage * self:GetAggroMultiplier(attacker)
     victim.srpg_threat = victim.srpg_threat or {}
     victim.srpg_threat[playerID] = (victim.srpg_threat[playerID] or 0) + math.max(1, damage)
     victim.srpg_last_attacker_player = playerID
+end
+
+function ThreatSystem:GetItemSpecial(item, key)
+    if not item then return 0 end
+    local ok, value = pcall(function() return item:GetSpecialValueFor(key) end)
+    if ok and value then return tonumber(value) or 0 end
+    return 0
+end
+
+function ThreatSystem:GetAggroMultiplier(hero)
+    local reduction = 0
+    if hero then
+        for slot = 0, 8 do
+            local item = hero:GetItemInSlot(slot)
+            reduction = reduction + self:GetItemSpecial(item, "aggro_reduction")
+        end
+    end
+    return math.max(0.25, 1 - (reduction / 100))
 end
 
 function ThreatSystem:IsHeroInsideSafeZone(hero, origin, radius)

@@ -4,6 +4,7 @@ function EnemySpawnSystem:Init(gameMode)
     self.gameMode = gameMode
     self.spawned_hub = false
     self.active = {}
+    self.camps = {}
 end
 
 function EnemySpawnSystem:SpawnHubNPCs()
@@ -21,8 +22,7 @@ function EnemySpawnSystem:StartZone(zone)
     local cfg = ZoneConfig[zone]
     if not cfg or cfg.safe_zone then return end
     for index, spawnName in ipairs(cfg.spawns) do
-        local unitName = cfg.units[((index - 1) % #cfg.units) + 1]
-        self:SpawnCamp(spawnName, unitName, "common", zone, 4 + zone)
+        self:SpawnCamp(spawnName, cfg.units, "common", zone, 4 + zone)
     end
     local unitTier = math.min(zone, 5)
     self:SpawnCamp(cfg.elite_spawn, "npc_sirv_z" .. unitTier .. "_elite", "elite", zone, 1)
@@ -36,13 +36,55 @@ function EnemySpawnSystem:SpawnAllUnlocked()
     end
 end
 
-function EnemySpawnSystem:SpawnCamp(spawnName, unitName, category, zone, count, bossFlag)
+function EnemySpawnSystem:GetCampKey(spawnName, category, bossFlag)
+    return tostring(spawnName or "unknown") .. ":" .. tostring(bossFlag or category or "common")
+end
+
+function EnemySpawnSystem:PickCampUnit(unitPool, index)
+    if type(unitPool) == "table" then
+        if #unitPool <= 0 then return nil end
+        return unitPool[RandomInt(1, #unitPool)]
+    end
+    return unitPool
+end
+
+function EnemySpawnSystem:IsRespawnable(category, bossFlag)
+    if bossFlag then return false end
+    return category == "common" or category == "elite"
+end
+
+function EnemySpawnSystem:GetRespawnDelay(category)
+    if category == "elite" then return SurvivalConfig.ELITE_RESPAWN_DELAY or 90 end
+    return SurvivalConfig.CAMP_RESPAWN_DELAY or 35
+end
+
+function EnemySpawnSystem:SpawnCamp(spawnName, unitPool, category, zone, count, bossFlag, force)
     local ent = Entities:FindByName(nil, spawnName)
     if not ent then return end
+    local campKey = self:GetCampKey(spawnName, category, bossFlag)
+    local existing = self.camps[campKey]
+    if existing and not force and ((existing.alive or 0) > 0 or existing.respawn_scheduled) then return end
+
     local origin = ent:GetAbsOrigin()
+    self.camps[campKey] = {
+        spawn_name = spawnName,
+        unit_pool = unitPool,
+        category = category,
+        zone = zone,
+        count = count,
+        boss_flag = bossFlag,
+        alive = 0,
+        respawnable = self:IsRespawnable(category, bossFlag),
+        respawn_scheduled = false,
+    }
+
     for i = 1, count do
+        local unitName = self:PickCampUnit(unitPool, i)
+        if not unitName then return end
         local unit = CreateUnitByName(unitName, origin + RandomVector(RandomInt(0, 180)), true, nil, nil, DOTA_TEAM_BADGUYS)
         if unit then
+            self.camps[campKey].alive = self.camps[campKey].alive + 1
+            unit.srpg_camp_key = campKey
             unit.srpg_spawn_name = spawnName
             unit.srpg_unit_name = unitName
             unit.srpg_category = category
@@ -50,11 +92,31 @@ function EnemySpawnSystem:SpawnCamp(spawnName, unitName, category, zone, count, 
             unit.srpg_boss_key = bossFlag
             self:ScaleUnit(unit)
             self:EquipEnemy(unit, category, zone)
+            self:StartEnemyBehavior(unit)
             if (bossFlag or category == "elite") and BossSystem then
                 BossSystem:OnBossSpawned(unit, category, zone)
             end
         end
     end
+end
+
+function EnemySpawnSystem:OnUnitKilled(unit)
+    if not unit or not unit.srpg_camp_key then return end
+    local camp = self.camps[unit.srpg_camp_key]
+    if not camp then return end
+
+    camp.alive = math.max(0, (camp.alive or 1) - 1)
+    if camp.alive > 0 or not camp.respawnable or camp.respawn_scheduled then return end
+
+    camp.respawn_scheduled = true
+    local campKey = unit.srpg_camp_key
+    Timers:CreateTimer(self:GetRespawnDelay(camp.category), function()
+        local data = self.camps[campKey]
+        if not data then return nil end
+        data.respawn_scheduled = false
+        self:SpawnCamp(data.spawn_name, data.unit_pool, data.category, data.zone, data.count, data.boss_flag, true)
+        return nil
+    end)
 end
 
 function EnemySpawnSystem:EquipEnemy(unit, category, zone)
@@ -77,6 +139,51 @@ function EnemySpawnSystem:EquipEnemy(unit, category, zone)
     if item.armor and item.armor > 0 then
         unit:SetPhysicalArmorBaseValue(unit:GetPhysicalArmorBaseValue() + item.armor)
     end
+end
+
+function EnemySpawnSystem:StartEnemyBehavior(unit)
+    if not unit or not unit.srpg_unit_name then return end
+    if string.find(unit.srpg_unit_name, "_healer") then
+        self:StartHealerThink(unit)
+    end
+end
+
+function EnemySpawnSystem:StartHealerThink(unit)
+    Timers:CreateTimer(2.5, function()
+        if not unit or unit:IsNull() or not unit:IsAlive() then return nil end
+
+        local allies = FindUnitsInRadius(
+            unit:GetTeamNumber(),
+            unit:GetAbsOrigin(),
+            nil,
+            650,
+            DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+            DOTA_UNIT_TARGET_BASIC,
+            DOTA_UNIT_TARGET_FLAG_NONE,
+            FIND_ANY_ORDER,
+            false
+        )
+
+        local target = nil
+        local missing = 0
+        for _, ally in pairs(allies) do
+            local deficit = ally:GetMaxHealth() - ally:GetHealth()
+            if ally:IsAlive() and deficit > missing then
+                target = ally
+                missing = deficit
+            end
+        end
+
+        if target and missing > 0 then
+            local worldScale = 1
+            if WorldLevelSystem and WorldLevelSystem.GetEnemyHealthModifier then
+                worldScale = WorldLevelSystem:GetEnemyHealthModifier() or 1
+            end
+            target:Heal(70 * worldScale, unit)
+        end
+
+        return 6.0
+    end)
 end
 
 function EnemySpawnSystem:ScaleUnit(unit)
