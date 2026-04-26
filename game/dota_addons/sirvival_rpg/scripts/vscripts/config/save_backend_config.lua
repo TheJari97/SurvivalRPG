@@ -1,11 +1,9 @@
 SaveBackendConfig = {
-    -- Keep disabled until there is a real external service.
-    -- With this off, saves stay in match memory only.
-    ENABLED = false,
+    -- Real backend is live. Production rejects requests without a valid server key.
+    -- Local Tools may still fall back to memory if Dota cannot provide a dedicated server key.
+    ENABLED = true,
 
-    -- Example future value:
-    -- BASE_URL = "https://api.your-domain.com"
-    BASE_URL = "",
+    BASE_URL = "https://survivalrpgdota.com",
 
     LOAD_PATH = "/api/survivalrpg/player/load",
     SAVE_PATH = "/api/survivalrpg/player/save",
