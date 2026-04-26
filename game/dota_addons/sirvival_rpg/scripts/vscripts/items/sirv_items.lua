@@ -38,6 +38,7 @@ function modifier_item_sirv_generic:DeclareFunctions()
         MODIFIER_PROPERTY_ATTACK_RANGE_BONUS,
         MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_SOURCE,
         MODIFIER_PROPERTY_EVASION_CONSTANT,
+        MODIFIER_PROPERTY_MANA_BONUS,
     }
 end
 function modifier_item_sirv_generic:GetModifierPreAttack_BonusDamage() return ItemSpecial(self:GetAbility(), "bonus_damage") end
@@ -52,6 +53,7 @@ function modifier_item_sirv_generic:GetModifierAttackSpeedBonus_Constant() retur
 function modifier_item_sirv_generic:GetModifierAttackRangeBonus() return ItemSpecial(self:GetAbility(), "bonus_attack_range") end
 function modifier_item_sirv_generic:GetModifierHealAmplify_PercentageSource() return ItemSpecial(self:GetAbility(), "heal_amp") end
 function modifier_item_sirv_generic:GetModifierEvasion_Constant() return ItemSpecial(self:GetAbility(), "evasion") end
+function modifier_item_sirv_generic:GetModifierManaBonus() return ItemSpecial(self:GetAbility(), "bonus_mana") end
 
 item_sirv_basic_weapon = class({})
 function item_sirv_basic_weapon:GetIntrinsicModifierName() if self:GetAbilityName():find('potion') then return nil end return "modifier_item_sirv_generic" end

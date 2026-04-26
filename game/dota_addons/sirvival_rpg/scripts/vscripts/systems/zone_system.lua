@@ -44,9 +44,12 @@ function ZoneSystem:MarkBossKilled(flag)
     if not flag then return end
     self.completed[flag] = true
     local bossZone = tonumber(string.match(flag, "zone_boss_(%d+)") or 0)
-    if bossZone > 0 and bossZone < 10 then
-        WorldLevelSystem:Unlock(math.min(10, bossZone + 1))
-        self:OpenGateForZone(bossZone + 1)
+    if bossZone > 0 then
+        if bossZone < 10 then
+            WorldLevelSystem:Unlock(math.min(10, bossZone + 1))
+            self:OpenGateForZone(bossZone + 1)
+        end
+        if EnemySpawnSystem then EnemySpawnSystem:OnZoneBossCompleted(bossZone) end
     end
     self:Publish()
     SirvUtils:NotifyAll("Jefe completado: " .. flag .. ".", "success")

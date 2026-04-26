@@ -60,10 +60,14 @@ function SurvivalRPG:InitGameMode()
     mode:SetFixedRespawnTime(SurvivalConfig.RESPAWN_DELAY)
     mode:SetCameraDistanceOverride(SurvivalConfig.CAMERA_DISTANCE)
     mode:SetThink("OnThink", self, "SurvivalThink", 1.0)
+    if mode.SetCustomHeroMaxLevel then
+        mode:SetCustomHeroMaxLevel(SurvivalConfig.MAX_LEVEL or 100)
+    end
 
     ListenToGameEvent("game_rules_state_change", Dynamic_Wrap(SurvivalRPG, "OnGameRulesStateChange"), self)
     ListenToGameEvent("npc_spawned", Dynamic_Wrap(SurvivalRPG, "OnNPCSpawned"), self)
     ListenToGameEvent("entity_killed", Dynamic_Wrap(SurvivalRPG, "OnEntityKilled"), self)
+    ListenToGameEvent("dota_player_learned_ability", Dynamic_Wrap(SurvivalRPG, "OnAbilityLearned"), self)
 
     PlayerProgressionSystem:Init(self)
     PlayerLifeSystem:Init(self)
@@ -130,6 +134,13 @@ function SurvivalRPG:OnEntityKilled(event)
             QuestSystem:OnEnemyKilled(attacker:GetPlayerOwnerID(), killed)
         end
     end
+end
+
+function SurvivalRPG:OnAbilityLearned(event)
+    local playerID = tonumber(event.PlayerID or event.player or -1)
+    if playerID < 0 then return end
+    PlayerProgressionSystem:ApplyHeroProgress(playerID)
+    PlayerProgressionSystem:Publish(playerID)
 end
 
 function SurvivalRPG:OnThink()

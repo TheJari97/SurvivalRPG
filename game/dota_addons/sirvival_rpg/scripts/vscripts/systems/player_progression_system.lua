@@ -12,12 +12,15 @@ function PlayerProgressionSystem:InitializePlayer(playerID)
         level = 1,
         xp = 0,
         skill_points = 0,
+        total_skill_points = 0,
+        spent_skill_points = 0,
         gear_score = 0,
         hero = heroName,
         unlocked_zones = { [1] = true },
         unlocked_world_levels = { [1] = true },
         boss_flags = {},
     }
+    self:ApplyHeroProgress(playerID)
     self:Publish(playerID)
 end
 
@@ -29,11 +32,40 @@ function PlayerProgressionSystem:AddXP(playerID, amount)
     while data.level < XPConfig.max_level and data.xp >= XPConfig:GetRequiredXP(data.level) do
         data.xp = data.xp - XPConfig:GetRequiredXP(data.level)
         data.level = data.level + 1
-        data.skill_points = XPConfig:GetSkillPointsForLevel(data.level)
         SirvUtils:NotifyPlayer(playerID, "Subiste a nivel " .. data.level .. ".", "success")
     end
+    self:ApplyHeroProgress(playerID)
     if QuestSystem then QuestSystem:Publish(playerID) end
     self:Publish(playerID)
+end
+
+function PlayerProgressionSystem:GetSpentAbilityPoints(hero)
+    if not hero then return 0 end
+
+    local heroCfg = HeroConfig[hero:GetUnitName()]
+    local spent = 0
+    for _, abilityName in ipairs((heroCfg and heroCfg.abilities) or {}) do
+        local ability = hero:FindAbilityByName(abilityName)
+        if ability then spent = spent + (ability:GetLevel() or 0) end
+    end
+    return spent
+end
+
+function PlayerProgressionSystem:ApplyHeroProgress(playerID)
+    local data = self.progress[playerID]
+    local hero = SirvUtils:GetPlayerHero(playerID)
+    if not data or not hero then return end
+
+    data.total_skill_points = XPConfig:GetSkillPointsForLevel(data.level)
+    data.spent_skill_points = self:GetSpentAbilityPoints(hero)
+    data.skill_points = math.max(0, data.total_skill_points - data.spent_skill_points)
+
+    while hero:GetLevel() < data.level do
+        hero:HeroLevelUp(false)
+    end
+    if hero.SetAbilityPoints then
+        hero:SetAbilityPoints(data.skill_points)
+    end
 end
 
 function PlayerProgressionSystem:SetBossFlag(playerID, flag)

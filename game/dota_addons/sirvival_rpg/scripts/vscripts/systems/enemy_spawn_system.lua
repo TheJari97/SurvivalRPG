@@ -27,7 +27,11 @@ function EnemySpawnSystem:StartZone(zone)
     local unitTier = math.min(zone, 5)
     self:SpawnCamp(cfg.elite_spawn, "npc_sirv_z" .. unitTier .. "_elite", "elite", zone, 1)
     self:SpawnCamp(cfg.area_boss_spawn, "npc_sirv_area_boss_" .. unitTier, "area_boss", zone, 1, "area_boss_" .. zone)
-    self:SpawnCamp(cfg.zone_boss_spawn, "npc_sirv_zone_boss_" .. unitTier, "zone_boss", zone, 1, "zone_boss_" .. zone)
+    if self:IsZoneBossCompleted(zone) then
+        self:SpawnZoneBossReplacement(zone, false)
+    else
+        self:SpawnCamp(cfg.zone_boss_spawn, "npc_sirv_zone_boss_" .. unitTier, "zone_boss", zone, 1, "zone_boss_" .. zone)
+    end
 end
 
 function EnemySpawnSystem:SpawnAllUnlocked()
@@ -56,6 +60,21 @@ end
 function EnemySpawnSystem:GetRespawnDelay(category)
     if category == "elite" then return SurvivalConfig.ELITE_RESPAWN_DELAY or 90 end
     return SurvivalConfig.CAMP_RESPAWN_DELAY or 35
+end
+
+function EnemySpawnSystem:IsZoneBossCompleted(zone)
+    local flag = "zone_boss_" .. tostring(zone or 0)
+    if ZoneSystem and ZoneSystem.completed and ZoneSystem.completed[flag] then return true end
+    if BossSystem and BossSystem.killed and BossSystem.killed[flag] then return true end
+    return false
+end
+
+function EnemySpawnSystem:SpawnZoneBossReplacement(zone, force)
+    local cfg = ZoneConfig[zone]
+    if not cfg or not cfg.zone_boss_spawn then return end
+
+    local unitTier = math.min(zone, 5)
+    self:SpawnCamp(cfg.zone_boss_spawn, "npc_sirv_z" .. unitTier .. "_elite", "elite", zone, 1, nil, force)
 end
 
 function EnemySpawnSystem:SpawnCamp(spawnName, unitPool, category, zone, count, bossFlag, force)
@@ -115,6 +134,34 @@ function EnemySpawnSystem:OnUnitKilled(unit)
         if not data then return nil end
         data.respawn_scheduled = false
         self:SpawnCamp(data.spawn_name, data.unit_pool, data.category, data.zone, data.count, data.boss_flag, true)
+        return nil
+    end)
+end
+
+function EnemySpawnSystem:OnZoneBossCompleted(zone)
+    local targetZone = tonumber(zone or 0) or 0
+    if targetZone <= 0 then return end
+
+    local enemies = FindUnitsInRadius(
+        DOTA_TEAM_BADGUYS,
+        Vector(0, 0, 0),
+        nil,
+        FIND_UNITS_EVERYWHERE,
+        DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+        DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+        DOTA_UNIT_TARGET_FLAG_NONE,
+        FIND_ANY_ORDER,
+        false
+    )
+
+    for _, enemy in pairs(enemies) do
+        if enemy.srpg_zone == targetZone then
+            self:ApplyPostBossScaling(enemy)
+        end
+    end
+
+    Timers:CreateTimer(SurvivalConfig.ELITE_RESPAWN_DELAY or 90, function()
+        self:SpawnZoneBossReplacement(targetZone, false)
         return nil
     end)
 end
@@ -196,4 +243,19 @@ function EnemySpawnSystem:ScaleUnit(unit)
     unit:SetHealth(unit:GetMaxHealth())
     unit:SetBaseDamageMin(math.floor(unit:GetBaseDamageMin() * damageScale))
     unit:SetBaseDamageMax(math.floor(unit:GetBaseDamageMax() * damageScale))
+    self:ApplyPostBossScaling(unit)
+end
+
+function EnemySpawnSystem:ApplyPostBossScaling(unit)
+    if not unit or unit:IsNull() or unit.srpg_post_zone_boss_scaled then return end
+    if not unit.srpg_zone or not self:IsZoneBossCompleted(unit.srpg_zone) then return end
+
+    unit.srpg_post_zone_boss_scaled = true
+    local healthMultiplier = SurvivalConfig.POST_ZONE_BOSS_HEALTH_MULTIPLIER or 1.35
+    local damageMultiplier = SurvivalConfig.POST_ZONE_BOSS_DAMAGE_MULTIPLIER or 1.2
+    unit:SetBaseMaxHealth(math.floor(unit:GetBaseMaxHealth() * healthMultiplier))
+    unit:SetMaxHealth(unit:GetBaseMaxHealth())
+    unit:SetHealth(unit:GetMaxHealth())
+    unit:SetBaseDamageMin(math.floor(unit:GetBaseDamageMin() * damageMultiplier))
+    unit:SetBaseDamageMax(math.floor(unit:GetBaseDamageMax() * damageMultiplier))
 end

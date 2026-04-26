@@ -14,6 +14,8 @@ npc_cosmetic_vendor_spawn,info_target,Zona 0,Vendedor de Cosmeticos,yes,NPC del 
 zone_1_spawn_1,info_target,Zona 1,Spawn normal,yes,Campamento normal
 zone_1_spawn_2,info_target,Zona 1,Spawn normal,yes,Campamento normal
 zone_1_spawn_3,info_target,Zona 1,Spawn normal,yes,Campamento normal
+zone_1_spawn_4,info_target,Zona 1,Spawn normal,yes,Campamento normal
+zone_1_spawn_5,info_target,Zona 1,Spawn normal,yes,Campamento normal
 zone_1_elite_spawn,info_target,Zona 1,Spawn elite,yes,Elite inicial
 area_boss_1_spawn,info_target,Zona 1,Jefe de area,yes,Arena simple
 zone_boss_1_spawn,info_target,Zona 1,Jefe de zona,yes,Desbloquea Zona 2 y Mundo 2
@@ -21,6 +23,8 @@ respawn_zone_1,info_target,Zona 1,Respawn de zona,yes,Entrada segura
 zone_2_spawn_1,info_target,Zona 2,Spawn normal,yes,Campamento normal
 zone_2_spawn_2,info_target,Zona 2,Spawn normal,yes,Campamento normal
 zone_2_spawn_3,info_target,Zona 2,Spawn normal,yes,Campamento normal
+zone_2_spawn_4,info_target,Zona 2,Spawn normal,yes,Campamento normal
+zone_2_spawn_5,info_target,Zona 2,Spawn normal,yes,Campamento normal
 zone_2_elite_spawn,info_target,Zona 2,Spawn elite,yes,Elite de bosque corrupto
 area_boss_2_spawn,info_target,Zona 2,Jefe de area,yes,Arena simple media
 zone_boss_2_spawn,info_target,Zona 2,Jefe de zona,yes,Desbloquea Zona 3 y Mundo 3
@@ -29,6 +33,8 @@ zone_gate_2,info_target,Entrada Zona 2,Puerta logica,yes,Colocar en el acceso vi
 zone_3_spawn_1,info_target,Zona 3,Spawn normal,yes,Campamento normal
 zone_3_spawn_2,info_target,Zona 3,Spawn normal,yes,Campamento normal
 zone_3_spawn_3,info_target,Zona 3,Spawn normal,yes,Campamento normal
+zone_3_spawn_4,info_target,Zona 3,Spawn normal,yes,Campamento normal
+zone_3_spawn_5,info_target,Zona 3,Spawn normal,yes,Campamento normal
 zone_3_elite_spawn,info_target,Zona 3,Spawn elite,yes,Elite de cripta
 area_boss_3_spawn,info_target,Zona 3,Jefe de area,yes,Empiezan mecanicas mas serias
 zone_boss_3_spawn,info_target,Zona 3,Jefe de zona,yes,Desbloquea Zona 4 y Mundo 4
@@ -37,6 +43,8 @@ zone_gate_3,info_target,Entrada Zona 3,Puerta logica,yes,Colocar en el acceso vi
 zone_4_spawn_1,info_target,Zona 4,Spawn normal,yes,Campamento normal
 zone_4_spawn_2,info_target,Zona 4,Spawn normal,yes,Campamento normal
 zone_4_spawn_3,info_target,Zona 4,Spawn normal,yes,Campamento normal
+zone_4_spawn_4,info_target,Zona 4,Spawn normal,yes,Campamento normal
+zone_4_spawn_5,info_target,Zona 4,Spawn normal,yes,Campamento normal
 zone_4_elite_spawn,info_target,Zona 4,Spawn elite,yes,Elite de bastion
 area_boss_4_spawn,info_target,Zona 4,Jefe de area,yes,Arena fortaleza
 zone_boss_4_spawn,info_target,Zona 4,Jefe de zona,yes,Desbloquea Zona 5 y Mundo 5
@@ -45,6 +53,8 @@ zone_gate_4,info_target,Entrada Zona 4,Puerta logica,yes,Colocar en el acceso vi
 zone_5_spawn_1,info_target,Zona 5,Spawn normal,yes,Campamento normal
 zone_5_spawn_2,info_target,Zona 5,Spawn normal,yes,Campamento normal
 zone_5_spawn_3,info_target,Zona 5,Spawn normal,yes,Campamento normal
+zone_5_spawn_4,info_target,Zona 5,Spawn normal,yes,Campamento normal
+zone_5_spawn_5,info_target,Zona 5,Spawn normal,yes,Campamento normal
 zone_5_elite_spawn,info_target,Zona 5,Spawn elite,yes,Elite titanico
 area_boss_5_spawn,info_target,Zona 5,Jefe de area,yes,Arena titanica
 zone_boss_5_spawn,info_target,Zona 5,Jefe de zona,yes,Desbloquea Zona 6 y Mundo 6
@@ -53,6 +63,8 @@ zone_gate_5,info_target,Entrada Zona 5,Puerta logica,yes,Colocar en el acceso vi
 zone_6_spawn_1,info_target,Zona 6,Spawn normal,yes,Campamento normal
 zone_6_spawn_2,info_target,Zona 6,Spawn normal,yes,Campamento normal
 zone_6_spawn_3,info_target,Zona 6,Spawn normal,yes,Campamento normal
+zone_6_spawn_4,info_target,Zona 6,Spawn normal,yes,Campamento normal
+zone_6_spawn_5,info_target,Zona 6,Spawn normal,yes,Campamento normal
 zone_6_elite_spawn,info_target,Zona 6,Spawn elite,yes,Elite de pantano
 area_boss_6_spawn,info_target,Zona 6,Jefe de area,yes,Arena avanzada
 zone_boss_6_spawn,info_target,Zona 6,Jefe de zona,yes,Desbloquea Zona 7 y Mundo 7
@@ -61,6 +73,8 @@ zone_gate_6,info_target,Entrada Zona 6,Puerta logica,yes,Colocar en el acceso vi
 zone_7_spawn_1,info_target,Zona 7,Spawn normal,yes,Campamento normal
 zone_7_spawn_2,info_target,Zona 7,Spawn normal,yes,Campamento normal
 zone_7_spawn_3,info_target,Zona 7,Spawn normal,yes,Campamento normal
+zone_7_spawn_4,info_target,Zona 7,Spawn normal,yes,Campamento normal
+zone_7_spawn_5,info_target,Zona 7,Spawn normal,yes,Campamento normal
 zone_7_elite_spawn,info_target,Zona 7,Spawn elite,yes,Elite demoniaco
 area_boss_7_spawn,info_target,Zona 7,Jefe de area,yes,Arena demoniaca
 zone_boss_7_spawn,info_target,Zona 7,Jefe de zona,yes,Desbloquea Zona 8 y Mundo 8
@@ -69,6 +83,8 @@ zone_gate_7,info_target,Entrada Zona 7,Puerta logica,yes,Colocar en el acceso vi
 zone_8_spawn_1,info_target,Zona 8,Spawn normal,yes,Campamento normal
 zone_8_spawn_2,info_target,Zona 8,Spawn normal,yes,Campamento normal
 zone_8_spawn_3,info_target,Zona 8,Spawn normal,yes,Campamento normal
+zone_8_spawn_4,info_target,Zona 8,Spawn normal,yes,Campamento normal
+zone_8_spawn_5,info_target,Zona 8,Spawn normal,yes,Campamento normal
 zone_8_elite_spawn,info_target,Zona 8,Spawn elite,yes,Elite abisal
 area_boss_8_spawn,info_target,Zona 8,Jefe de area,yes,Arena catedral
 zone_boss_8_spawn,info_target,Zona 8,Jefe de zona,yes,Desbloquea Zona 9 y Mundo 9
@@ -77,6 +93,8 @@ zone_gate_8,info_target,Entrada Zona 8,Puerta logica,yes,Colocar en el acceso vi
 zone_9_spawn_1,info_target,Zona 9,Spawn normal,yes,Campamento normal
 zone_9_spawn_2,info_target,Zona 9,Spawn normal,yes,Campamento normal
 zone_9_spawn_3,info_target,Zona 9,Spawn normal,yes,Campamento normal
+zone_9_spawn_4,info_target,Zona 9,Spawn normal,yes,Campamento normal
+zone_9_spawn_5,info_target,Zona 9,Spawn normal,yes,Campamento normal
 zone_9_elite_spawn,info_target,Zona 9,Spawn elite,yes,Elite primordial
 area_boss_9_spawn,info_target,Zona 9,Jefe de area,yes,Arena primordial
 zone_boss_9_spawn,info_target,Zona 9,Jefe de zona,yes,Desbloquea Zona 10 y Mundo 10
@@ -85,6 +103,8 @@ zone_gate_9,info_target,Entrada Zona 9,Puerta logica,yes,Colocar en el acceso vi
 zone_10_spawn_1,info_target,Zona 10,Spawn normal,yes,Campamento final
 zone_10_spawn_2,info_target,Zona 10,Spawn normal,yes,Campamento final
 zone_10_spawn_3,info_target,Zona 10,Spawn normal,yes,Campamento final
+zone_10_spawn_4,info_target,Zona 10,Spawn normal,yes,Campamento final
+zone_10_spawn_5,info_target,Zona 10,Spawn normal,yes,Campamento final
 zone_10_elite_spawn,info_target,Zona 10,Spawn elite,yes,Elite final
 area_boss_10_spawn,info_target,Zona 10,Jefe de area,yes,Arena final
 zone_boss_10_spawn,info_target,Zona 10,Jefe de zona,yes,Cierre del ciclo inicial
