@@ -1,4 +1,4 @@
-sirvival_rpg_dota_v05_3_pre
-version=0.5.3-pre
+sirvival_rpg_dota_v05_4_pre
+version=0.5.4-pre
 public_name=SurvivalRPG
 internal_addon=sirvival_rpg

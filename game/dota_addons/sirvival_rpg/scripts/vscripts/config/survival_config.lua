@@ -3,7 +3,8 @@ SurvivalConfig = {
     ["PUBLIC_NAME"] = "SurvivalRPG",
     ["LEGACY_PUBLIC_NAME"] = "SirvivalRPG",
     ["MAP_NAME"] = "sirvival_rpg",
-    ["VERSION"] = "0.5.3-pre",
+    ["VERSION"] = "0.5.4-pre",
+    ["STARTING_GOLD"] = 0,
     ["MAX_PLAYERS"] = 5,
     ["LIVES_PER_PLAYER"] = 5,
     ["RESPAWN_DELAY"] = 8,
@@ -45,6 +46,7 @@ SurvivalConfig = {
         ["npc_artifact_master_spawn"] = "npc_sirv_artifact_master",
         ["npc_pet_keeper_spawn"] = "npc_sirv_pet_keeper",
         ["npc_season_keeper_spawn"] = "npc_sirv_season_keeper",
+        ["npc_cosmetic_vendor_spawn"] = "npc_sirv_cosmetic_vendor",
     },
 }
 SirvivalConfig = SurvivalConfig

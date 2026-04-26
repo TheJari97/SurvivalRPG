@@ -12,6 +12,11 @@ function ShopSystem:Init(gameMode)
         "item_sirv_basic_backpack",
         "item_sirv_material_iron_fragment",
     }
+    self.cosmetics = {
+        { id = "pet_skin_shadow_wolf_ember", name_es = "Skin Lobo de Brasa", premium_cost = 600, applies_to = "shadow_wolf" },
+        { id = "pet_skin_moon_wisp_gold", name_es = "Skin Brizna Dorada", premium_cost = 750, applies_to = "moon_wisp" },
+        { id = "hero_aura_founder", name_es = "Aura Fundador", premium_cost = 1200, applies_to = "account" },
+    }
     self:Publish()
 end
 
@@ -44,6 +49,35 @@ function ShopSystem:BuyBasicItem(keys)
     self:BuyItem(keys)
 end
 
+function ShopSystem:BuildProgressionCatalog()
+    local catalog = {}
+    for _, rarity in ipairs(ItemTierConfig.rarities or {}) do
+        for _, slot in ipairs(ItemTierConfig.slots or {}) do
+            catalog[#catalog + 1] = "item_sirv_" .. rarity .. "_" .. slot
+        end
+    end
+    return catalog
+end
+
+function ShopSystem:BuildRecipePreview()
+    local preview = {}
+    for recipeID, recipe in pairs(CraftingRecipes or {}) do
+        preview[#preview + 1] = {
+            id = recipeID,
+            npc = recipe.npc,
+            result = recipe.result,
+            gold = recipe.gold or 0,
+            requires = recipe.requires or {},
+        }
+    end
+    return preview
+end
+
 function ShopSystem:Publish()
-    CustomNetTables:SetTableValue("shop_data", "basic", { items = self.items })
+    CustomNetTables:SetTableValue("shop_data", "basic", {
+        items = self.items,
+        progression = self:BuildProgressionCatalog(),
+        recipes = self:BuildRecipePreview(),
+        cosmetics = self.cosmetics,
+    })
 end

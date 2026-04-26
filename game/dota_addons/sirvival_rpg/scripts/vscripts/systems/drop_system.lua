@@ -24,11 +24,41 @@ function DropSystem:RollDrop(killed, attacker)
 end
 
 function DropSystem:PickItem(zone, category)
-    local rarityPool = DropTables.world_level_rarity[WorldLevelSystem.current_level] or { "basic", "common" }
-    local rarity = rarityPool[RandomInt(1, #rarityPool)]
+    local rarity = self:PickRarity(category)
     local slots = ItemTierConfig.slots
     local slot = slots[RandomInt(1, #slots)]
     return "item_sirv_" .. rarity .. "_" .. slot
+end
+
+function DropSystem:PickRarity(category)
+    local tableCfg = DropTables[category] or DropTables.common
+    local weights = tableCfg.rarity_weights or { basic = 80, common = 20 }
+    local worldPool = DropTables.world_level_rarity[WorldLevelSystem.current_level] or { "basic", "common" }
+    local allowed = {}
+    local total = 0
+
+    for _, rarity in pairs(worldPool) do
+        local weight = weights[rarity] or 0
+        if weight > 0 then
+            allowed[#allowed + 1] = { rarity = rarity, weight = weight }
+            total = total + weight
+        end
+    end
+
+    if total <= 0 then
+        return worldPool[#worldPool] or "basic"
+    end
+
+    local roll = RandomFloat(0, total)
+    local cursor = 0
+    for _, entry in pairs(allowed) do
+        cursor = cursor + entry.weight
+        if roll <= cursor then
+            return entry.rarity
+        end
+    end
+
+    return allowed[#allowed].rarity
 end
 
 function DropSystem:PickMaterial(zone, category)

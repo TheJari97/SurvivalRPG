@@ -16,6 +16,7 @@ end
 function BossSystem:RollMechanics(category, zone)
     local mechanics = {}
     local count = 1
+    if category == "elite" then count = zone >= 5 and 2 or 1 end
     if category == "area_boss" then count = zone >= 5 and 3 or 2 end
     if category == "zone_boss" then count = math.min(5, 2 + math.floor(zone / 2)) end
 
@@ -27,13 +28,30 @@ function BossSystem:RollMechanics(category, zone)
     while #mechanics < count do
         local poolName = pools[RandomInt(1, #pools)]
         local pool = BossMechanicsConfig[poolName] or BossMechanicsConfig.weak
-        local pick = pool[RandomInt(1, #pool)]
+        local pick = self:PickWeightedMechanic(pool)
         if pick and not used[pick.id] then
             used[pick.id] = true
             table.insert(mechanics, pick)
         end
     end
     return mechanics
+end
+
+function BossSystem:PickWeightedMechanic(pool)
+    local total = 0
+    for _, mechanic in pairs(pool or {}) do
+        total = total + (mechanic.weight or 1)
+    end
+    if total <= 0 then return (pool or {})[1] end
+
+    local roll = RandomFloat(0, total)
+    local cursor = 0
+    for _, mechanic in pairs(pool or {}) do
+        cursor = cursor + (mechanic.weight or 1)
+        if roll <= cursor then return mechanic end
+    end
+
+    return pool[#pool]
 end
 
 function BossSystem:StartMechanicThink(unit)
@@ -67,6 +85,14 @@ function BossSystem:CastMechanic(unit, mechanic)
 
     if mechanic.type == "enrage" then
         unit:AddNewModifier(unit, nil, "modifier_sirv_boss_enrage", { duration = mechanic.duration or 8 })
+        return
+    end
+
+    if mechanic.type == "reflect_damage" then
+        unit:AddNewModifier(unit, nil, "modifier_sirv_boss_reflect", {
+            duration = mechanic.duration or 6,
+            reflect_pct = mechanic.reflect_pct or 10,
+        })
         return
     end
 
@@ -105,6 +131,7 @@ function BossSystem:OnUnitKilled(unit, attacker)
 end
 
 LinkLuaModifier("modifier_sirv_boss_enrage", "systems/boss_system.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_sirv_boss_reflect", "systems/boss_system.lua", LUA_MODIFIER_MOTION_NONE)
 modifier_sirv_boss_enrage = class({})
 function modifier_sirv_boss_enrage:IsHidden() return false end
 function modifier_sirv_boss_enrage:IsPurgable() return false end
@@ -113,3 +140,30 @@ function modifier_sirv_boss_enrage:DeclareFunctions()
 end
 function modifier_sirv_boss_enrage:GetModifierBaseDamageOutgoing_Percentage() return 35 end
 function modifier_sirv_boss_enrage:GetModifierAttackSpeedBonus_Constant() return 55 end
+
+modifier_sirv_boss_reflect = class({})
+function modifier_sirv_boss_reflect:IsHidden() return false end
+function modifier_sirv_boss_reflect:IsPurgable() return false end
+function modifier_sirv_boss_reflect:OnCreated(kv)
+    kv = kv or {}
+    self.reflect_pct = tonumber(kv.reflect_pct or 10) or 10
+end
+function modifier_sirv_boss_reflect:DeclareFunctions()
+    return { MODIFIER_EVENT_ON_TAKEDAMAGE }
+end
+function modifier_sirv_boss_reflect:OnTakeDamage(event)
+    if not IsServer() then return end
+    local parent = self:GetParent()
+    if event.unit ~= parent then return end
+    if not event.attacker or event.attacker:IsNull() or event.attacker:GetTeamNumber() == parent:GetTeamNumber() then return end
+    if event.damage <= 0 then return end
+
+    ApplyDamage({
+        victim = event.attacker,
+        attacker = parent,
+        damage = event.damage * (self.reflect_pct / 100),
+        damage_type = DAMAGE_TYPE_MAGICAL,
+        damage_flags = DOTA_DAMAGE_FLAG_REFLECTION,
+        ability = nil,
+    })
+end

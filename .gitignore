@@ -1,5 +1,6 @@
 # Local documentation generated for the project owner.
 /docs/
+/tools/
 /content/**/README*.md
 /game/**/README*.md
 /content/**/maps/*NO_SE_GENERA_A_MANO.txt

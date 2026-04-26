@@ -19,6 +19,14 @@
   },
   "current_priority": "Construir Zona 0 y Zona 1 completa antes de decorar el resto.",
   "tile_editor_recommendation": "Usar Standard/default Dota tilesets. No usar Custom tilesets en la primera version.",
+  "hub_npcs": [
+    "npc_shop_basic_spawn",
+    "npc_crafting_master_spawn",
+    "npc_artifact_master_spawn",
+    "npc_pet_keeper_spawn",
+    "npc_season_keeper_spawn",
+    "npc_cosmetic_vendor_spawn"
+  ],
   "talent_tree_note": "El arbol de talentos sera un sistema de progresion separado. No reemplaza los caminos fisicos del mapa.",
   "layout_order": [
     "Zona 0: Hub seguro",

@@ -49,7 +49,7 @@ function EnemySpawnSystem:SpawnCamp(spawnName, unitName, category, zone, count, 
             unit.srpg_zone = zone
             unit.srpg_boss_key = bossFlag
             self:ScaleUnit(unit)
-            if bossFlag and BossSystem then
+            if (bossFlag or category == "elite") and BossSystem then
                 BossSystem:OnBossSpawned(unit, category, zone)
             end
         end

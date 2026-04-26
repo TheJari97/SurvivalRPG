@@ -46,4 +46,41 @@ PetConfig = {
             crit = { 3, 8 },
         },
     },
+    ["shadow_wolf"] = {
+        name_es = "Lobo Sombrio",
+        role = "dps_fisico",
+        unit = "npc_sirv_pet_shadow_wolf",
+        active = "periodic_physical_damage",
+        unlock_level = 15,
+        rarity = "common",
+        stats = {
+            damage = { 6, 18 },
+            movement = { 10, 24 },
+        },
+    },
+    ["ember_cat"] = {
+        name_es = "Gato de Brasa",
+        role = "dps_magico",
+        unit = "npc_sirv_pet_ember_cat",
+        active = "periodic_magic_damage",
+        unlock_level = 25,
+        rarity = "rare",
+        stats = {
+            magic_damage = { 5, 14 },
+            dodge = { 3, 7 },
+        },
+    },
+    ["mini_roshan"] = {
+        name_es = "Roshan Miniatura",
+        role = "tanque_dps",
+        unit = "npc_sirv_pet_mini_roshan",
+        active = "taunt_guard",
+        unlock_level = 45,
+        rarity = "legendary",
+        stats = {
+            health = { 180, 420 },
+            armor = { 5, 12 },
+            damage = { 10, 28 },
+        },
+    },
 }

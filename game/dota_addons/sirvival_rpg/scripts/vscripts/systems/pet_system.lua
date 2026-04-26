@@ -13,6 +13,26 @@ function PetSystem:Open(keys)
     self:Publish()
 end
 
+function PetSystem:GetPlayerData(playerID)
+    local data = self.players[playerID]
+    if not data or data.heroes == nil then
+        data = { heroes = {}, skins = {} }
+        self.players[playerID] = data
+    end
+    data.skins = data.skins or {}
+    return data
+end
+
+function PetSystem:GetHeroPetData(playerID, hero)
+    local data = self:GetPlayerData(playerID)
+    local heroName = "unknown"
+    if hero and not hero:IsNull() and hero.GetUnitName then
+        heroName = hero:GetUnitName()
+    end
+    data.heroes[heroName] = data.heroes[heroName] or { unlocked = {}, active = nil, levels = {} }
+    return data.heroes[heroName], heroName
+end
+
 function PetSystem:EquipPet(keys)
     local playerID = tonumber(keys.PlayerID or -1)
     local pet = tostring(keys.pet or "stone_cub")
@@ -20,10 +40,10 @@ function PetSystem:EquipPet(keys)
     local hero = SirvUtils:GetPlayerHero(playerID)
     if not hero or not cfg then return end
 
-    self.players[playerID] = self.players[playerID] or { unlocked = {}, active = nil, levels = {} }
-    self.players[playerID].unlocked[pet] = true
-    self.players[playerID].active = pet
-    self.players[playerID].levels[pet] = self.players[playerID].levels[pet] or 1
+    local heroPets = self:GetHeroPetData(playerID, hero)
+    heroPets.unlocked[pet] = true
+    heroPets.active = pet
+    heroPets.levels[pet] = heroPets.levels[pet] or 1
 
     self:RemoveVisiblePet(playerID)
     self:SpawnVisiblePet(playerID, hero, pet, cfg)
@@ -77,7 +97,8 @@ function PetSystem:CastPetSupport(playerID, unit, hero, pet)
     if not cfg then return end
 
     if cfg.active == "periodic_heal" then
-        hero:Heal(180 + 20 * (self.players[playerID].levels[pet] or 1), unit)
+        local heroPets = self:GetHeroPetData(playerID, hero)
+        hero:Heal(180 + 20 * (heroPets.levels[pet] or 1), unit)
         return
     end
 
@@ -107,8 +128,11 @@ end
 function PetSystem:UpgradePet(keys)
     local playerID = tonumber(keys.PlayerID or -1)
     local pet = tostring(keys.pet or "stone_cub")
-    self.players[playerID] = self.players[playerID] or { unlocked = {}, active = nil, levels = {} }
-    self.players[playerID].levels[pet] = (self.players[playerID].levels[pet] or 1) + 1
+    local hero = SirvUtils:GetPlayerHero(playerID)
+    if not hero then return end
+    local heroPets = self:GetHeroPetData(playerID, hero)
+    heroPets.unlocked[pet] = true
+    heroPets.levels[pet] = (heroPets.levels[pet] or 1) + 1
     SirvUtils:NotifyPlayer(playerID, "Mascota mejorada.", "success")
     self:Publish()
 end

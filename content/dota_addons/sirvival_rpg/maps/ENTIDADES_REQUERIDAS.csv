@@ -10,6 +10,7 @@ npc_crafting_master_spawn,info_target,Zona 0,Maestro Forjador,yes,NPC del hub
 npc_artifact_master_spawn,info_target,Zona 0,Maestro de Artefactos,yes,NPC del hub
 npc_pet_keeper_spawn,info_target,Zona 0,Maestro de Bestias,yes,NPC del hub
 npc_season_keeper_spawn,info_target,Zona 0,Guardian de Temporada,yes,NPC del hub
+npc_cosmetic_vendor_spawn,info_target,Zona 0,Vendedor de Cosmeticos,yes,NPC del hub para skins y moneda premium futura
 zone_1_spawn_1,info_target,Zona 1,Spawn normal,yes,Campamento normal
 zone_1_spawn_2,info_target,Zona 1,Spawn normal,yes,Campamento normal
 zone_1_spawn_3,info_target,Zona 1,Spawn normal,yes,Campamento normal

@@ -55,6 +55,14 @@ function SaveSystem:CaptureInventory(hero)
     return inventory
 end
 
+function SaveSystem:GetPlayerGold(playerID)
+    if PlayerResource and PlayerResource.GetGold then
+        local ok, gold = pcall(function() return PlayerResource:GetGold(playerID) end)
+        if ok and gold then return tonumber(gold) or 0 end
+    end
+    return 0
+end
+
 function SaveSystem:BuildSavePayload(playerID)
     local hero = SirvUtils:GetPlayerHero(playerID)
     local heroName = hero and hero:GetUnitName() or "unknown"
@@ -69,7 +77,10 @@ function SaveSystem:BuildSavePayload(playerID)
         saved_at_game_time = math.floor(GameRules:GetGameTime()),
         season_id = SeasonConfig.current_season_id,
         heroes = {
-            [heroName] = PlayerProgressionSystem.progress[playerID],
+            [heroName] = {
+                progress = PlayerProgressionSystem.progress[playerID],
+                gold = self:GetPlayerGold(playerID),
+            },
         },
         inventory = self:CaptureInventory(hero),
         artifacts = ArtifactSystem.player_artifacts[playerID] or {},
