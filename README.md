@@ -1,4 +1,4 @@
-# SurvivalRPG v0.5.2-pre
+# SurvivalRPG v0.5.3-pre
 
 Custom game cooperativo de Dota 2 para hasta 5 jugadores.
 
@@ -43,6 +43,8 @@ Mascotas visibles
 Boss roulette base
 Guardado temporal preparado para backend HTTP futuro
 Zona 0 limpia: enemigos se retiran, recuperan vida y retoman aggro fuera del refugio
+Mapa real `sirvival_rpg.vmap` sincronizado desde Hammer
+Instalador protege mapas .vmap/.vmap_c existentes en Dota
 ```
 
 La documentacion larga de trabajo vive localmente en `docs/` y esta ignorada por Git para no subirla al repositorio publico.
