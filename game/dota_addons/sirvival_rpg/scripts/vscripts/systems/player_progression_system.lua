@@ -28,15 +28,30 @@ function PlayerProgressionSystem:AddXP(playerID, amount)
     self:InitializePlayer(playerID)
     local data = self.progress[playerID]
     local mult = WorldLevelSystem and WorldLevelSystem:GetXPModifier() or 1
+    local levelCap = self:GetCurrentLevelCap()
+    if data.level >= levelCap then
+        data.xp = 0
+        self:ApplyHeroProgress(playerID)
+        self:Publish(playerID)
+        return
+    end
     data.xp = data.xp + math.floor((amount or 0) * mult)
-    while data.level < XPConfig.max_level and data.xp >= XPConfig:GetRequiredXP(data.level) do
+    while data.level < XPConfig.max_level and data.level < levelCap and data.xp >= XPConfig:GetRequiredXP(data.level) do
         data.xp = data.xp - XPConfig:GetRequiredXP(data.level)
         data.level = data.level + 1
         SirvUtils:NotifyPlayer(playerID, "Subiste a nivel " .. data.level .. ".", "success")
     end
+    if data.level >= levelCap then data.xp = 0 end
     self:ApplyHeroProgress(playerID)
     if QuestSystem then QuestSystem:Publish(playerID) end
     self:Publish(playerID)
+end
+
+function PlayerProgressionSystem:GetCurrentLevelCap()
+    if WorldLevelSystem and WorldLevelSystem.GetMaxPlayerLevel then
+        return math.min(XPConfig.max_level or 100, WorldLevelSystem:GetMaxPlayerLevel())
+    end
+    return XPConfig.max_level or 100
 end
 
 function PlayerProgressionSystem:GetSpentAbilityPoints(hero)
@@ -66,6 +81,37 @@ function PlayerProgressionSystem:ApplyHeroProgress(playerID)
     if hero.SetAbilityPoints then
         hero:SetAbilityPoints(data.skill_points)
     end
+end
+
+function PlayerProgressionSystem:ResetSkillPoints(playerID, free)
+    self:InitializePlayer(playerID)
+    local data = self.progress[playerID]
+    local hero = SirvUtils:GetPlayerHero(playerID)
+    if not data or not hero then return false end
+
+    local cost = free and 0 or (SurvivalConfig.SKILL_RESET_GOLD or 250)
+    if cost > 0 and PlayerResource:GetGold(playerID) < cost then
+        SirvUtils:NotifyPlayer(playerID, "No tienes oro suficiente para resetear habilidades.", "warning")
+        return false
+    end
+
+    if cost > 0 then
+        PlayerResource:ModifyGold(playerID, -cost, false, DOTA_ModifyGold_PurchaseItem)
+    end
+
+    local heroCfg = HeroConfig[hero:GetUnitName()]
+    for _, abilityName in ipairs((heroCfg and heroCfg.abilities) or {}) do
+        local ability = hero:FindAbilityByName(abilityName)
+        if ability then ability:SetLevel(0) end
+    end
+
+    data.total_skill_points = XPConfig:GetSkillPointsForLevel(data.level)
+    data.spent_skill_points = 0
+    data.skill_points = data.total_skill_points
+    if hero.SetAbilityPoints then hero:SetAbilityPoints(data.skill_points) end
+    self:Publish(playerID)
+    SirvUtils:NotifyPlayer(playerID, free and "Habilidades reseteadas gratis al entrar." or "Habilidades reseteadas.", "success")
+    return true
 end
 
 function PlayerProgressionSystem:SetBossFlag(playerID, flag)

@@ -17,6 +17,7 @@ function UIEventSystem:Init(gameMode)
     CustomGameEventManager:RegisterListener("select_world_level", function(_, keys) WorldLevelSystem:Select(keys) end)
     CustomGameEventManager:RegisterListener("open_season_panel", function(_, keys) SeasonSystem:Open(keys) end)
     CustomGameEventManager:RegisterListener("request_player_progress", function(_, keys) PlayerProgressionSystem:Publish(tonumber(keys.PlayerID or -1)) end)
+    CustomGameEventManager:RegisterListener("reset_skill_points", function(_, keys) PlayerProgressionSystem:ResetSkillPoints(tonumber(keys.PlayerID or -1), false) end)
     CustomGameEventManager:RegisterListener("request_zone_entry", function(_, keys) ZoneSystem:RequestZoneEntry(keys) end)
 
     CustomGameEventManager:RegisterListener("sirv_buy_basic_item", function(_, keys) ShopSystem:BuyItem(keys) end)

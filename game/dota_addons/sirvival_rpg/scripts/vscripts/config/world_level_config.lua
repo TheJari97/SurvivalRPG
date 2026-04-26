@@ -1,5 +1,6 @@
 WorldLevelConfig = {
     [1] = {
+        ["max_player_level"] = 10,
         ["enemy_health"] = 1.0,
         ["enemy_damage"] = 1.0,
         ["xp"] = 1.0,
@@ -8,6 +9,7 @@ WorldLevelConfig = {
         ["unlock"] = "Disponible desde el inicio.",
     },
     [2] = {
+        ["max_player_level"] = 20,
         ["enemy_health"] = 1.35,
         ["enemy_damage"] = 1.18,
         ["xp"] = 1.25,
@@ -16,6 +18,7 @@ WorldLevelConfig = {
         ["unlock"] = "Completar Zona 1.",
     },
     [3] = {
+        ["max_player_level"] = 30,
         ["enemy_health"] = 1.8,
         ["enemy_damage"] = 1.38,
         ["xp"] = 1.55,
@@ -24,6 +27,7 @@ WorldLevelConfig = {
         ["unlock"] = "Completar Zona 2.",
     },
     [4] = {
+        ["max_player_level"] = 40,
         ["enemy_health"] = 2.4,
         ["enemy_damage"] = 1.65,
         ["xp"] = 1.9,
@@ -32,6 +36,7 @@ WorldLevelConfig = {
         ["unlock"] = "Completar Zona 3.",
     },
     [5] = {
+        ["max_player_level"] = 50,
         ["enemy_health"] = 3.2,
         ["enemy_damage"] = 2.0,
         ["xp"] = 2.3,
@@ -40,6 +45,7 @@ WorldLevelConfig = {
         ["unlock"] = "Completar Zona 4.",
     },
     [6] = {
+        ["max_player_level"] = 60,
         ["enemy_health"] = 4.0,
         ["enemy_damage"] = 2.35,
         ["xp"] = 2.75,
@@ -48,6 +54,7 @@ WorldLevelConfig = {
         ["unlock"] = "Futuro.",
     },
     [7] = {
+        ["max_player_level"] = 70,
         ["enemy_health"] = 5.0,
         ["enemy_damage"] = 2.8,
         ["xp"] = 3.25,
@@ -56,6 +63,7 @@ WorldLevelConfig = {
         ["unlock"] = "Futuro.",
     },
     [8] = {
+        ["max_player_level"] = 80,
         ["enemy_health"] = 6.25,
         ["enemy_damage"] = 3.25,
         ["xp"] = 3.8,
@@ -64,6 +72,7 @@ WorldLevelConfig = {
         ["unlock"] = "Futuro.",
     },
     [9] = {
+        ["max_player_level"] = 90,
         ["enemy_health"] = 7.8,
         ["enemy_damage"] = 3.8,
         ["xp"] = 4.4,
@@ -72,6 +81,7 @@ WorldLevelConfig = {
         ["unlock"] = "Futuro.",
     },
     [10] = {
+        ["max_player_level"] = 100,
         ["enemy_health"] = 9.5,
         ["enemy_damage"] = 4.45,
         ["xp"] = 5.0,

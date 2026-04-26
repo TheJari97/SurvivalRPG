@@ -37,6 +37,7 @@
     id("OpenQuests").SetPanelEvent("onactivate", function () { openPanel("QuestPanel", "open_quests"); });
     id("OpenWorldLevel").SetPanelEvent("onactivate", function () { openPanel("WorldLevelPanel", "open_world_level"); });
     id("OpenSeason").SetPanelEvent("onactivate", function () { openPanel("SeasonPanel", "open_season_panel"); });
+    id("ResetSkills").SetPanelEvent("onactivate", function () { send("reset_skill_points", {}); });
     id("SaveProgress").SetPanelEvent("onactivate", function () { send("sirv_request_save", {}); });
     GameEvents.Subscribe("srpg_toast", toast);
     CustomNetTables.SubscribeNetTableListener("game_state", updateState);

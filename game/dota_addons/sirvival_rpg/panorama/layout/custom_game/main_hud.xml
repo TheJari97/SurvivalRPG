@@ -11,6 +11,7 @@
                 <Button id="OpenQuests" class="srpg-icon-button"><Label text="#srpg_quests" /></Button>
                 <Button id="OpenWorldLevel" class="srpg-icon-button"><Label text="#srpg_world_level" /></Button>
                 <Button id="OpenSeason" class="srpg-icon-button"><Label text="#srpg_season" /></Button>
+                <Button id="ResetSkills" class="srpg-icon-button"><Label text="#srpg_reset_skills" /></Button>
                 <Button id="SaveProgress" class="srpg-icon-button"><Label text="#srpg_save_progress" /></Button>
             </Panel>
         </Panel>

@@ -12,6 +12,7 @@
         "srpg_season" "Season"
         "srpg_save_now" "Save now"
         "srpg_quests" "Quests"
+        "srpg_reset_skills" "Reset skills"
         "srpg_save_progress" "Save Progress"
         "npc_dota_hero_axe" "Iron Guardian"
         "npc_dota_hero_centaur" "Oathbound Colossus"

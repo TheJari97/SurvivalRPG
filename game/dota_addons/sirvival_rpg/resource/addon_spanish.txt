@@ -12,6 +12,7 @@
         "srpg_season" "Temporada"
         "srpg_save_now" "Guardar ahora"
         "srpg_quests" "Misiones"
+        "srpg_reset_skills" "Reset habilidades"
         "srpg_save_progress" "Salvar progreso"
         "npc_dota_hero_axe" "Guardián de Hierro"
         "npc_dota_hero_centaur" "Coloso Juramentado"

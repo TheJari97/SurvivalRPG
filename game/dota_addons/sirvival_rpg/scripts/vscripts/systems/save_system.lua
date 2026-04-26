@@ -37,6 +37,14 @@ function SaveSystem:GetMatchID()
     return "local_tools"
 end
 
+function SaveSystem:GetCurrentHeroName(playerID)
+    local hero = SirvUtils:GetPlayerHero(playerID)
+    if hero and not hero:IsNull() and hero.GetUnitName then
+        return hero:GetUnitName(), hero
+    end
+    return "unknown", hero
+end
+
 function SaveSystem:CaptureInventory(hero)
     local inventory = {}
     if not hero then return inventory end
@@ -64,28 +72,36 @@ function SaveSystem:GetPlayerGold(playerID)
 end
 
 function SaveSystem:BuildSavePayload(playerID)
-    local hero = SirvUtils:GetPlayerHero(playerID)
-    local heroName = hero and hero:GetUnitName() or "unknown"
+    local heroName, hero = self:GetCurrentHeroName(playerID)
+    local steamID = self:GetSteamID(playerID)
     PlayerProgressionSystem:InitializePlayer(playerID)
+    local petData = PetSystem.players[playerID] or { heroes = {}, skins = {} }
+    local heroPets = (petData.heroes and petData.heroes[heroName]) or { unlocked = {}, active = nil, levels = {} }
 
     return {
-        schema_version = 1,
+        schema_version = 2,
         addon_version = SurvivalConfig.VERSION,
-        steam_id = self:GetSteamID(playerID),
+        steam_id = steamID,
         player_id = playerID,
         match_id = self:GetMatchID(),
         saved_at_game_time = math.floor(GameRules:GetGameTime()),
         season_id = SeasonConfig.current_season_id,
+        active_hero = heroName,
+        account = {
+            steam_id = steamID,
+            pet_skins = petData.skins or {},
+        },
         heroes = {
             [heroName] = {
+                hero_name = heroName,
                 progress = PlayerProgressionSystem.progress[playerID],
                 gold = self:GetPlayerGold(playerID),
+                inventory = self:CaptureInventory(hero),
+                artifacts = ArtifactSystem.player_artifacts[playerID] or {},
+                pets = heroPets,
+                quests = QuestSystem and QuestSystem.players[playerID] or {},
             },
         },
-        inventory = self:CaptureInventory(hero),
-        artifacts = ArtifactSystem.player_artifacts[playerID] or {},
-        pets = PetSystem.players[playerID] or {},
-        quests = QuestSystem and QuestSystem.players[playerID] or {},
         world_level = {
             current = WorldLevelSystem.current_level,
             unlocked = WorldLevelSystem.unlocked,
@@ -97,13 +113,23 @@ function SaveSystem:BuildSavePayload(playerID)
     }
 end
 
+function SaveSystem:MergePayloadWithPrevious(playerID, payload)
+    local previous = self.memory[self:GetSaveKey(playerID)]
+    if previous and previous.heroes and payload and payload.heroes then
+        for heroName, heroData in pairs(previous.heroes) do
+            payload.heroes[heroName] = payload.heroes[heroName] or heroData
+        end
+    end
+    return payload
+end
+
 function SaveSystem:LoadPlayerData(playerID)
     return self.memory[self:GetSaveKey(playerID)]
 end
 
 function SaveSystem:SavePlayerDataPlaceholder(playerID)
     local key = self:GetSaveKey(playerID)
-    self.memory[key] = self:BuildSavePayload(playerID)
+    self.memory[key] = self:MergePayloadWithPrevious(playerID, self:BuildSavePayload(playerID))
     CustomNetTables:SetTableValue("season_data", "last_save_" .. playerID, self.memory[key])
     self:PublishStatus(playerID, "memory", "Guardado temporal en memoria. Se pierde al cerrar la partida.")
     return self.memory[key]
@@ -217,7 +243,7 @@ function SaveSystem:SavePlayerData(playerID)
     if playerID < 0 then return nil end
 
     local key = self:GetSaveKey(playerID)
-    local payload = self:BuildSavePayload(playerID)
+    local payload = self:MergePayloadWithPrevious(playerID, self:BuildSavePayload(playerID))
     self.memory[key] = payload
     CustomNetTables:SetTableValue("season_data", "last_save_" .. playerID, payload)
 

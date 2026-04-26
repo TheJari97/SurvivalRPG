@@ -15,6 +15,7 @@
     "open_quests" { "PlayerID" "short" }
     "complete_quest" { "PlayerID" "short" "quest" "string" }
     "request_player_progress" { "PlayerID" "short" }
+    "reset_skill_points" { "PlayerID" "short" }
     "request_zone_entry" { "PlayerID" "short" "zone" "short" }
     "srpg_toast" { "message" "string" "style" "string" }
 

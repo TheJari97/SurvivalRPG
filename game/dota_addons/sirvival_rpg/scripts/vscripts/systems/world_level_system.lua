@@ -15,6 +15,10 @@ function WorldLevelSystem:GetXPModifier()
     return self:GetConfig().xp or 1
 end
 
+function WorldLevelSystem:GetMaxPlayerLevel()
+    return self:GetConfig().max_player_level or math.min(100, (self.current_level or 1) * 10)
+end
+
 function WorldLevelSystem:GetEnemyHealthModifier()
     return self:GetConfig().enemy_health or 1
 end

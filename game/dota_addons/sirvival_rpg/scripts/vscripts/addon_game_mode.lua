@@ -113,6 +113,7 @@ function SurvivalRPG:OnNPCSpawned(event)
         local spawnName = "spawn_player_" .. tostring(playerID + 1)
         local origin = SirvUtils:FindEntityOrigin(spawnName, unit:GetAbsOrigin())
         FindClearSpaceForUnit(unit, origin, true)
+        PlayerProgressionSystem:ResetSkillPoints(playerID, true)
     end
 end
 
