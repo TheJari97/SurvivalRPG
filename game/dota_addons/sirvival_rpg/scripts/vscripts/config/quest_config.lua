@@ -1,0 +1,67 @@
+QuestConfig = {
+    categories = {
+        initial = "Inicial",
+        main = "Obligatoria",
+        optional = "Opcional",
+        timed = "Especial por tiempo",
+        pet = "Mascota",
+        recipe = "Receta especial",
+    },
+    quests = {
+        intro_wake = {
+            title_es = "Despertar en el Refugio",
+            category = "initial",
+            initial_only = true,
+            description_es = "Primer guardado del personaje y reconocimiento del refugio.",
+            requirements = { level = 1 },
+            rewards = { gold = 50, items = { "item_sirv_potion_small", "item_sirv_potion_mana" } },
+        },
+        intro_first_hunt = {
+            title_es = "Primera caceria",
+            category = "initial",
+            initial_only = true,
+            description_es = "Derrota enemigos normales del Bosque Suave.",
+            requirements = { category_kills = { common = 8 } },
+            rewards = { gold = 90, xp = 120, items = { "item_sirv_material_iron_fragment" } },
+        },
+        intro_first_forge = {
+            title_es = "La primera forja",
+            category = "initial",
+            initial_only = true,
+            description_es = "Desbloquea la idea de craftear equipo de clase.",
+            requirements = { level = 3, quest_completed = "intro_first_hunt" },
+            rewards = { gold = 120, unlock_recipes = { "craft_w1_tank_oak_guard", "craft_w1_assassin_fox_edge", "craft_w1_dps_hunter_mark", "craft_w1_healer_mender_seed", "craft_w1_mage_spark_focus" } },
+        },
+        main_zone_1_boss = {
+            title_es = "Abrir la Puerta del Bosque",
+            category = "main",
+            description_es = "Derrota al jefe de zona 1 para abrir la puerta hacia la siguiente zona.",
+            requirements = { boss_flags = { "zone_boss_1" } },
+            rewards = { gold = 250, xp = 450, unlock_zone = 2 },
+        },
+        optional_zone_1_elite = {
+            title_es = "El alfa del claro",
+            category = "optional",
+            description_es = "Derrota al elite de Zona 1 para ganar materiales extra.",
+            requirements = { category_kills = { elite = 1 } },
+            rewards = { gold = 130, items = { "item_sirv_material_elite_core" } },
+        },
+        timed_zone_1_clean = {
+            title_es = "Bosque limpio",
+            category = "timed",
+            description_es = "Completa la Zona 1 rapido para desbloquear una receta especial.",
+            requirements = { boss_flags = { "zone_boss_1" }, max_game_time = 900 },
+            rewards = { gold = 180, unlock_recipes = { "craft_w1_special_rush_boots" } },
+        },
+        pet_first_companion = {
+            title_es = "Primer companero",
+            category = "pet",
+            description_es = "El personaje debe llegar a nivel 20 para desbloquear la mision de mascota.",
+            requirements = { level = 20 },
+            rewards = { gold = 150, unlock_pet = "shadow_wolf", items = { "item_sirv_pet_collar" } },
+        },
+    },
+    zone_main = {
+        [1] = "main_zone_1_boss",
+    },
+}

@@ -38,6 +38,7 @@ function WorldLevelSystem:Select(keys)
     end
     self.current_level = level
     self:Publish()
+    if ShopSystem then ShopSystem:Publish() end
     SirvUtils:NotifyAll("Nivel de Mundo cambiado a " .. level .. ".", "success")
 end
 

@@ -83,4 +83,40 @@ PetConfig = {
             damage = { 10, 28 },
         },
     },
+    ["grove_sprite"] = {
+        name_es = "Espiritu del Claro",
+        role = "soporte_healer",
+        unit = "npc_sirv_pet_grove_sprite",
+        active = "periodic_heal",
+        unlock_level = 20,
+        rarity = "common",
+        stats = {
+            heal_amp = { 3, 8 },
+            mana = { 50, 120 },
+        },
+    },
+    ["runic_turtle"] = {
+        name_es = "Tortuga Runica",
+        role = "soporte_defensivo",
+        unit = "npc_sirv_pet_runic_turtle",
+        active = "taunt_guard",
+        unlock_level = 30,
+        rarity = "epic",
+        stats = {
+            health = { 140, 360 },
+            armor = { 4, 10 },
+        },
+    },
+    ["clockwork_beetle"] = {
+        name_es = "Escarabajo Mecanico",
+        role = "soporte_utilidad",
+        unit = "npc_sirv_pet_clockwork_beetle",
+        active = "periodic_physical_damage",
+        unlock_level = 35,
+        rarity = "epic",
+        stats = {
+            damage = { 7, 18 },
+            movement = { 8, 20 },
+        },
+    },
 }

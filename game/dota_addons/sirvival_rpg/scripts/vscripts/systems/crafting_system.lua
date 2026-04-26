@@ -50,6 +50,10 @@ function CraftingSystem:CraftItem(keys)
         SirvUtils:NotifyPlayer(playerID, "No tienes oro suficiente para craftear.", "warning")
         return
     end
+    if QuestSystem and not QuestSystem:IsRecipeUnlocked(playerID, recipeID) then
+        SirvUtils:NotifyPlayer(playerID, "Esa receta todavia no esta desbloqueada.", "warning")
+        return
+    end
     for itemName, amount in pairs(recipe.requires or {}) do
         if CountItem(hero, itemName) < amount then
             SirvUtils:NotifyPlayer(playerID, "Faltan materiales: " .. itemName, "warning")
@@ -60,7 +64,11 @@ function CraftingSystem:CraftItem(keys)
         ConsumeItem(hero, itemName, amount)
     end
     PlayerResource:ModifyGold(playerID, -(recipe.gold or 0), false, DOTA_ModifyGold_PurchaseItem)
-    hero:AddItemByName(recipe.result)
+    local result = recipe.result
+    if recipe.result_pool and #recipe.result_pool > 0 then
+        result = recipe.result_pool[RandomInt(1, #recipe.result_pool)]
+    end
+    hero:AddItemByName(result)
     SirvUtils:NotifyPlayer(playerID, "Crafteo completado.", "success")
 end
 

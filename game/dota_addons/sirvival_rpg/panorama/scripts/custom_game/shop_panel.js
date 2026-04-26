@@ -13,7 +13,10 @@
         title("Tienda basica - compra con oro");
         (data.items || []).forEach(function (item) { row(itemName(item), function () { send("buy_shop_item", { item: item }); }); });
         title("Crafteos visibles - se fabrican con el NPC correcto");
-        (data.recipes || []).forEach(function (recipe) { row(itemName(recipe.result) + " | oro: " + recipe.gold, function () {}); });
+        (data.recipes || []).forEach(function (recipe) {
+            var result = recipe.result || ((recipe.result_pool || [])[0]) || recipe.id;
+            row(itemName(result) + " | oro: " + recipe.gold + (recipe.role ? " | " + recipe.role : ""), function () {});
+        });
         title("Catalogo de progreso - drops y crecimiento");
         (data.progression || []).slice(0, 42).forEach(function (item) { row(itemName(item), function () {}); });
         title("Cosmeticos premium - pendiente de backend/moneda");

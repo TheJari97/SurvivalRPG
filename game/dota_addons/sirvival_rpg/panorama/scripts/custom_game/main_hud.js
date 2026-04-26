@@ -34,8 +34,10 @@
     id("OpenCrafting").SetPanelEvent("onactivate", function () { openPanel("CraftingPanel", "open_crafting"); });
     id("OpenArtifacts").SetPanelEvent("onactivate", function () { openPanel("ArtifactPanel", "open_artifacts"); });
     id("OpenPets").SetPanelEvent("onactivate", function () { openPanel("PetPanel", "open_pets"); });
+    id("OpenQuests").SetPanelEvent("onactivate", function () { openPanel("QuestPanel", "open_quests"); });
     id("OpenWorldLevel").SetPanelEvent("onactivate", function () { openPanel("WorldLevelPanel", "open_world_level"); });
     id("OpenSeason").SetPanelEvent("onactivate", function () { openPanel("SeasonPanel", "open_season_panel"); });
+    id("SaveProgress").SetPanelEvent("onactivate", function () { send("sirv_request_save", {}); });
     GameEvents.Subscribe("srpg_toast", toast);
     CustomNetTables.SubscribeNetTableListener("game_state", updateState);
     $.Schedule(0.2, updateState);

@@ -12,6 +12,8 @@
     "open_world_level" { "PlayerID" "short" }
     "select_world_level" { "PlayerID" "short" "level" "short" }
     "open_season_panel" { "PlayerID" "short" }
+    "open_quests" { "PlayerID" "short" }
+    "complete_quest" { "PlayerID" "short" "quest" "string" }
     "request_player_progress" { "PlayerID" "short" }
     "request_zone_entry" { "PlayerID" "short" "zone" "short" }
     "srpg_toast" { "message" "string" "style" "string" }
@@ -19,6 +21,7 @@
     "sirv_buy_basic_item" { "PlayerID" "short" "item" "string" }
     "sirv_craft_item" { "PlayerID" "short" "recipe" "string" }
     "sirv_request_save" { "PlayerID" "short" }
+    "sirv_complete_quest" { "PlayerID" "short" "quest" "string" }
     "sirv_request_zone_unlock" { "PlayerID" "short" "zone" "short" }
     "sirv_toast" { "message" "string" "style" "string" }
 }

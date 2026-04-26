@@ -125,7 +125,9 @@ function BossSystem:OnUnitKilled(unit, attacker)
     self.killed[flag] = true
     ZoneSystem:MarkBossKilled(flag)
     if attacker and attacker.GetPlayerOwnerID then
-        PlayerProgressionSystem:SetBossFlag(attacker:GetPlayerOwnerID(), flag)
+        local playerID = attacker:GetPlayerOwnerID()
+        PlayerProgressionSystem:SetBossFlag(playerID, flag)
+        if QuestSystem then QuestSystem:OnBossKilled(playerID, flag) end
     end
     CustomNetTables:SetTableValue("game_state", "bosses", self.killed)
 end

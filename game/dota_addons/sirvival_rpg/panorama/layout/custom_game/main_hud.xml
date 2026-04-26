@@ -8,8 +8,10 @@
                 <Button id="OpenCrafting" class="srpg-icon-button"><Label text="#srpg_crafting" /></Button>
                 <Button id="OpenArtifacts" class="srpg-icon-button"><Label text="#srpg_artifacts" /></Button>
                 <Button id="OpenPets" class="srpg-icon-button"><Label text="#srpg_pets" /></Button>
+                <Button id="OpenQuests" class="srpg-icon-button"><Label text="#srpg_quests" /></Button>
                 <Button id="OpenWorldLevel" class="srpg-icon-button"><Label text="#srpg_world_level" /></Button>
                 <Button id="OpenSeason" class="srpg-icon-button"><Label text="#srpg_season" /></Button>
+                <Button id="SaveProgress" class="srpg-icon-button"><Label text="#srpg_save_progress" /></Button>
             </Panel>
         </Panel>
         <Panel id="SRPGToastPanel" class="srpg-toast-panel" />

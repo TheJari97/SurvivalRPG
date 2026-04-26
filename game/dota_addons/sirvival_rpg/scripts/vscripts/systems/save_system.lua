@@ -85,6 +85,7 @@ function SaveSystem:BuildSavePayload(playerID)
         inventory = self:CaptureInventory(hero),
         artifacts = ArtifactSystem.player_artifacts[playerID] or {},
         pets = PetSystem.players[playerID] or {},
+        quests = QuestSystem and QuestSystem.players[playerID] or {},
         world_level = {
             current = WorldLevelSystem.current_level,
             unlocked = WorldLevelSystem.unlocked,

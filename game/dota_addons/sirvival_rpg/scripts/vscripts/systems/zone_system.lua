@@ -46,9 +46,20 @@ function ZoneSystem:MarkBossKilled(flag)
     local bossZone = tonumber(string.match(flag, "zone_boss_(%d+)") or 0)
     if bossZone > 0 and bossZone < 10 then
         WorldLevelSystem:Unlock(math.min(10, bossZone + 1))
+        self:OpenGateForZone(bossZone + 1)
     end
     self:Publish()
     SirvUtils:NotifyAll("Jefe completado: " .. flag .. ".", "success")
+end
+
+function ZoneSystem:OpenGateForZone(zone)
+    local cfg = ZoneConfig[zone]
+    if not cfg or not cfg.gate then return end
+
+    DoEntFire(cfg.gate, "Unlock", "", 0, nil, nil)
+    DoEntFire(cfg.gate, "Open", "", 0.05, nil, nil)
+    DoEntFire(cfg.gate, "Disable", "", 0.1, nil, nil)
+    SirvUtils:NotifyAll("Puerta abierta hacia Zona " .. tostring(zone) .. ".", "success")
 end
 
 function ZoneSystem:Publish()

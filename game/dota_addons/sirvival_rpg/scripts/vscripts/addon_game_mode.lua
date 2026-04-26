@@ -16,10 +16,17 @@ function Precache(context)
     PrecacheUnitByNameSync("npc_sirv_artifact_master", context)
     PrecacheUnitByNameSync("npc_sirv_pet_keeper", context)
     PrecacheUnitByNameSync("npc_sirv_season_keeper", context)
+    PrecacheUnitByNameSync("npc_sirv_cosmetic_vendor", context)
     PrecacheUnitByNameSync("npc_sirv_pet_stone_cub", context)
     PrecacheUnitByNameSync("npc_sirv_pet_moon_wisp", context)
     PrecacheUnitByNameSync("npc_sirv_pet_ember_imp", context)
     PrecacheUnitByNameSync("npc_sirv_pet_iron_hawk", context)
+    PrecacheUnitByNameSync("npc_sirv_pet_shadow_wolf", context)
+    PrecacheUnitByNameSync("npc_sirv_pet_ember_cat", context)
+    PrecacheUnitByNameSync("npc_sirv_pet_mini_roshan", context)
+    PrecacheUnitByNameSync("npc_sirv_pet_grove_sprite", context)
+    PrecacheUnitByNameSync("npc_sirv_pet_runic_turtle", context)
+    PrecacheUnitByNameSync("npc_sirv_pet_clockwork_beetle", context)
 end
 
 function Activate()
@@ -64,6 +71,7 @@ function SurvivalRPG:InitGameMode()
     DropSystem:Init(self)
     ShopSystem:Init(self)
     CraftingSystem:Init(self)
+    QuestSystem:Init(self)
     ArtifactSystem:Init(self)
     PetSystem:Init(self)
     SeasonSystem:Init(self)
@@ -90,6 +98,7 @@ function SurvivalRPG:OnNPCSpawned(event)
         unit.srpg_initialized = true
         local playerID = unit:GetPlayerOwnerID()
         PlayerProgressionSystem:InitializePlayer(playerID)
+        QuestSystem:OnPlayerInitialized(playerID)
         SaveSystem:RequestLoad(playerID)
         local spawnName = "spawn_player_" .. tostring(playerID + 1)
         local origin = SirvUtils:FindEntityOrigin(spawnName, unit:GetAbsOrigin())
@@ -110,6 +119,9 @@ function SurvivalRPG:OnEntityKilled(event)
     if killed:GetTeamNumber() == DOTA_TEAM_BADGUYS then
         BossSystem:OnUnitKilled(killed, attacker)
         DropSystem:RollDrop(killed, attacker)
+        if attacker and attacker.GetPlayerOwnerID then
+            QuestSystem:OnEnemyKilled(attacker:GetPlayerOwnerID(), killed)
+        end
     end
 end
 

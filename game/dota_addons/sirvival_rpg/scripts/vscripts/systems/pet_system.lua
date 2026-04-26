@@ -54,6 +54,17 @@ function PetSystem:EquipPet(keys)
     self:Publish()
 end
 
+function PetSystem:UnlockPetForCurrentHero(playerID, pet)
+    local cfg = PetConfig[pet]
+    local hero = SirvUtils:GetPlayerHero(playerID)
+    if not hero or not cfg then return end
+
+    local heroPets = self:GetHeroPetData(playerID, hero)
+    heroPets.unlocked[pet] = true
+    heroPets.levels[pet] = heroPets.levels[pet] or 1
+    self:Publish()
+end
+
 function PetSystem:SpawnVisiblePet(playerID, hero, pet, cfg)
     local unit = CreateUnitByName(cfg.unit or "npc_sirv_pet_stone_cub", hero:GetAbsOrigin() + RandomVector(160), true, hero, hero, DOTA_TEAM_GOODGUYS)
     if not unit then return end
@@ -95,10 +106,11 @@ function PetSystem:CastPetSupport(playerID, unit, hero, pet)
 
     local cfg = PetConfig[pet]
     if not cfg then return end
+    local multiplier = self:GetHeroPetMultiplier(hero, cfg)
 
     if cfg.active == "periodic_heal" then
         local heroPets = self:GetHeroPetData(playerID, hero)
-        hero:Heal(180 + 20 * (heroPets.levels[pet] or 1), unit)
+        hero:Heal((180 + 20 * (heroPets.levels[pet] or 1)) * multiplier, unit)
         return
     end
 
@@ -117,12 +129,25 @@ function PetSystem:CastPetSupport(playerID, unit, hero, pet)
     if not target then return end
 
     if cfg.active == "periodic_magic_damage" then
-        ApplyDamage({ victim = target, attacker = hero, damage = 160, damage_type = DAMAGE_TYPE_MAGICAL, ability = nil })
+        ApplyDamage({ victim = target, attacker = hero, damage = 160 * multiplier, damage_type = DAMAGE_TYPE_MAGICAL, ability = nil })
     elseif cfg.active == "periodic_physical_damage" then
-        ApplyDamage({ victim = target, attacker = hero, damage = 140, damage_type = DAMAGE_TYPE_PHYSICAL, ability = nil })
+        ApplyDamage({ victim = target, attacker = hero, damage = 140 * multiplier, damage_type = DAMAGE_TYPE_PHYSICAL, ability = nil })
     elseif cfg.active == "taunt_guard" then
         target:MoveToTargetToAttack(unit)
     end
+end
+
+function PetSystem:GetHeroPetMultiplier(hero, cfg)
+    if not hero or not cfg then return 1 end
+    local heroCfg = HeroConfig[hero:GetUnitName()] or {}
+    local role = string.lower(heroCfg.role or "")
+    local petRole = string.lower(cfg.role or "")
+
+    if string.find(role, "healer") and string.find(petRole, "soporte") then return 1.18 end
+    if string.find(role, "tanque") and string.find(petRole, "tanque") then return 1.15 end
+    if string.find(role, "dps") and string.find(petRole, "dps") then return 1.12 end
+    if string.find(role, "asesino") and string.find(petRole, "fisico") then return 1.1 end
+    return 1
 end
 
 function PetSystem:UpgradePet(keys)

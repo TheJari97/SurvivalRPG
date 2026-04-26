@@ -49,10 +49,33 @@ function EnemySpawnSystem:SpawnCamp(spawnName, unitName, category, zone, count, 
             unit.srpg_zone = zone
             unit.srpg_boss_key = bossFlag
             self:ScaleUnit(unit)
+            self:EquipEnemy(unit, category, zone)
             if (bossFlag or category == "elite") and BossSystem then
                 BossSystem:OnBossSpawned(unit, category, zone)
             end
         end
+    end
+end
+
+function EnemySpawnSystem:EquipEnemy(unit, category, zone)
+    if not EnemyEquipmentConfig or not unit then return end
+    local item = EnemyEquipmentConfig:Pick(zone, category)
+    if not item then return end
+
+    unit.srpg_equipped_items = unit.srpg_equipped_items or {}
+    table.insert(unit.srpg_equipped_items, item)
+
+    if item.health and item.health > 0 then
+        unit:SetBaseMaxHealth(unit:GetBaseMaxHealth() + item.health)
+        unit:SetMaxHealth(unit:GetBaseMaxHealth())
+        unit:SetHealth(unit:GetMaxHealth())
+    end
+    if item.damage and item.damage > 0 then
+        unit:SetBaseDamageMin(unit:GetBaseDamageMin() + item.damage)
+        unit:SetBaseDamageMax(unit:GetBaseDamageMax() + item.damage)
+    end
+    if item.armor and item.armor > 0 then
+        unit:SetPhysicalArmorBaseValue(unit:GetPhysicalArmorBaseValue() + item.armor)
     end
 end
 

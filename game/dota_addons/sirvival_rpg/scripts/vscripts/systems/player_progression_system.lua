@@ -32,6 +32,7 @@ function PlayerProgressionSystem:AddXP(playerID, amount)
         data.skill_points = XPConfig:GetSkillPointsForLevel(data.level)
         SirvUtils:NotifyPlayer(playerID, "Subiste a nivel " .. data.level .. ".", "success")
     end
+    if QuestSystem then QuestSystem:Publish(playerID) end
     self:Publish(playerID)
 end
 

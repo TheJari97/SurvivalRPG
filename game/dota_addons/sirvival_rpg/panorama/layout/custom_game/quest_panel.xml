@@ -1,0 +1,9 @@
+<root>
+    <Panel id="QuestPanel" class="srpg-panel srpg-hidden">
+        <Panel class="srpg-panel-header">
+            <Label text="#srpg_quests" class="srpg-panel-title" />
+            <Button id="QuestPanelClose" class="srpg-close"><Label text="X" /></Button>
+        </Panel>
+        <Panel id="QuestList" class="srpg-panel-list" />
+    </Panel>
+</root>

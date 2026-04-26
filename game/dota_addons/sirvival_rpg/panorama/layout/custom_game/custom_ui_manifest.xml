@@ -5,6 +5,7 @@
         <include src="file://{resources}/scripts/custom_game/crafting_panel.js" />
         <include src="file://{resources}/scripts/custom_game/artifact_panel.js" />
         <include src="file://{resources}/scripts/custom_game/pet_panel.js" />
+        <include src="file://{resources}/scripts/custom_game/quest_panel.js" />
         <include src="file://{resources}/scripts/custom_game/world_level_panel.js" />
         <include src="file://{resources}/scripts/custom_game/season_panel.js" />
     </scripts>
@@ -14,6 +15,7 @@
         <include src="file://{resources}/styles/custom_game/crafting_panel.css" />
         <include src="file://{resources}/styles/custom_game/artifact_panel.css" />
         <include src="file://{resources}/styles/custom_game/pet_panel.css" />
+        <include src="file://{resources}/styles/custom_game/quest_panel.css" />
         <include src="file://{resources}/styles/custom_game/world_level_panel.css" />
         <include src="file://{resources}/styles/custom_game/season_panel.css" />
     </styles>
@@ -23,6 +25,7 @@
         <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/crafting_panel.xml" />
         <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/artifact_panel.xml" />
         <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/pet_panel.xml" />
+        <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/quest_panel.xml" />
         <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/world_level_panel.xml" />
         <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/season_panel.xml" />
     </Panel>

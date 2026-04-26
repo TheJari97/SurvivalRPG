@@ -9,6 +9,7 @@
     "artifact_data" "1"
     "pet_data" "1"
     "season_data" "1"
+    "quest_data" "1"
     "sirvival_state" "1"
     "sirvival_catalog" "1"
     "sirvival_save" "1"

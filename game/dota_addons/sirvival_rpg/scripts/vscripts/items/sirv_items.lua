@@ -309,3 +309,20 @@ function item_sirv_potion_small:OnSpellStart() SurvivalItems:UseConsumable(self)
 item_sirv_potion_mana = class({})
 function item_sirv_potion_mana:GetIntrinsicModifierName() if self:GetAbilityName():find('potion') then return nil end return "modifier_item_sirv_generic" end
 function item_sirv_potion_mana:OnSpellStart() SurvivalItems:UseConsumable(self) end
+
+local function RegisterGenericShopItem(itemName)
+    if not itemName or _G[itemName] then return end
+    _G[itemName] = class({})
+    function _G[itemName]:GetIntrinsicModifierName()
+        return "modifier_item_sirv_generic"
+    end
+    function _G[itemName]:OnSpellStart()
+        SurvivalItems:UseConsumable(self)
+    end
+end
+
+if ShopConfig and ShopConfig.item_info then
+    for itemName, _ in pairs(ShopConfig.item_info) do
+        RegisterGenericShopItem(itemName)
+    end
+end
