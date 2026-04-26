@@ -123,4 +123,19 @@ ItemTierConfig = {
         drop = "Stats variables por tier/rango cuando exista el sistema de instancias.",
         craft = "Stats variables por tier/rango cuando exista el sistema de instancias; puede alimentar recetas superiores.",
     },
+    economy_rules = {
+        shop_sell_ratio = 0.35,
+        aggro_reduction_policy = "rara; principal en healer, support y ranged_dps defensivo",
+        crafted_inventory_name_policy = "usar items base hasta implementar item_instance_id; luego mostrar nombre propio real",
+        binding_policy = "soportar items ligados al heroe y items tradeables dentro de la cuenta",
+    },
+    fusion_rules = {
+        can_fail_from_tier = 3,
+        mitigation_items = true,
+        failure_can_consume_gold = true,
+        failure_can_consume_materials = true,
+        failure_can_consume_one_input = true,
+        negative_affixes_allowed = true,
+        note = "La fusion real requiere sistema de instancias para no romper items genericos de KV.",
+    },
 }
