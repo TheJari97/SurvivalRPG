@@ -1,10 +1,9 @@
-"DOTAUnits"
+"DOTAHeroes"
 {
     "npc_dota_hero_axe"
     {
         "override_hero" "npc_dota_hero_axe"
         "Enabled" "1"
-        "HeroID" "2000"
         "AbilityLayout" "5"
         "AttributePrimary" "DOTA_ATTRIBUTE_STRENGTH"
         "AttributeBaseStrength" "30"
@@ -40,7 +39,6 @@
     {
         "override_hero" "npc_dota_hero_centaur"
         "Enabled" "1"
-        "HeroID" "2001"
         "AbilityLayout" "5"
         "AttributePrimary" "DOTA_ATTRIBUTE_STRENGTH"
         "AttributeBaseStrength" "32"
@@ -76,7 +74,6 @@
     {
         "override_hero" "npc_dota_hero_sven"
         "Enabled" "1"
-        "HeroID" "2002"
         "AbilityLayout" "5"
         "AttributePrimary" "DOTA_ATTRIBUTE_STRENGTH"
         "AttributeBaseStrength" "26"
@@ -112,7 +109,6 @@
     {
         "override_hero" "npc_dota_hero_bristleback"
         "Enabled" "1"
-        "HeroID" "2003"
         "AbilityLayout" "5"
         "AttributePrimary" "DOTA_ATTRIBUTE_STRENGTH"
         "AttributeBaseStrength" "27"
@@ -148,7 +144,6 @@
     {
         "override_hero" "npc_dota_hero_omniknight"
         "Enabled" "1"
-        "HeroID" "2004"
         "AbilityLayout" "5"
         "AttributePrimary" "DOTA_ATTRIBUTE_STRENGTH"
         "AttributeBaseStrength" "25"
@@ -184,7 +179,6 @@
     {
         "override_hero" "npc_dota_hero_phantom_assassin"
         "Enabled" "1"
-        "HeroID" "2005"
         "AbilityLayout" "5"
         "AttributePrimary" "DOTA_ATTRIBUTE_AGILITY"
         "AttributeBaseStrength" "18"
@@ -220,7 +214,6 @@
     {
         "override_hero" "npc_dota_hero_riki"
         "Enabled" "1"
-        "HeroID" "2006"
         "AbilityLayout" "5"
         "AttributePrimary" "DOTA_ATTRIBUTE_AGILITY"
         "AttributeBaseStrength" "18"
@@ -256,7 +249,6 @@
     {
         "override_hero" "npc_dota_hero_juggernaut"
         "Enabled" "1"
-        "HeroID" "2007"
         "AbilityLayout" "5"
         "AttributePrimary" "DOTA_ATTRIBUTE_AGILITY"
         "AttributeBaseStrength" "20"
@@ -292,7 +284,6 @@
     {
         "override_hero" "npc_dota_hero_drow_ranger"
         "Enabled" "1"
-        "HeroID" "2008"
         "AbilityLayout" "5"
         "AttributePrimary" "DOTA_ATTRIBUTE_AGILITY"
         "AttributeBaseStrength" "17"
@@ -328,7 +319,6 @@
     {
         "override_hero" "npc_dota_hero_windrunner"
         "Enabled" "1"
-        "HeroID" "2009"
         "AbilityLayout" "5"
         "AttributePrimary" "DOTA_ATTRIBUTE_AGILITY"
         "AttributeBaseStrength" "19"
@@ -364,7 +354,6 @@
     {
         "override_hero" "npc_dota_hero_crystal_maiden"
         "Enabled" "1"
-        "HeroID" "2010"
         "AbilityLayout" "5"
         "AttributePrimary" "DOTA_ATTRIBUTE_INTELLECT"
         "AttributeBaseStrength" "16"
@@ -400,7 +389,6 @@
     {
         "override_hero" "npc_dota_hero_lina"
         "Enabled" "1"
-        "HeroID" "2011"
         "AbilityLayout" "5"
         "AttributePrimary" "DOTA_ATTRIBUTE_INTELLECT"
         "AttributeBaseStrength" "16"
@@ -436,7 +424,6 @@
     {
         "override_hero" "npc_dota_hero_oracle"
         "Enabled" "1"
-        "HeroID" "2012"
         "AbilityLayout" "5"
         "AttributePrimary" "DOTA_ATTRIBUTE_INTELLECT"
         "AttributeBaseStrength" "17"
@@ -472,7 +459,6 @@
     {
         "override_hero" "npc_dota_hero_dazzle"
         "Enabled" "1"
-        "HeroID" "2013"
         "AbilityLayout" "5"
         "AttributePrimary" "DOTA_ATTRIBUTE_INTELLECT"
         "AttributeBaseStrength" "17"
@@ -508,7 +494,6 @@
     {
         "override_hero" "npc_dota_hero_shadow_shaman"
         "Enabled" "1"
-        "HeroID" "2014"
         "AbilityLayout" "5"
         "AttributePrimary" "DOTA_ATTRIBUTE_INTELLECT"
         "AttributeBaseStrength" "17"

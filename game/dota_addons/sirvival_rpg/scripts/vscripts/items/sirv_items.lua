@@ -334,10 +334,10 @@ function item_sirv_potion_mana:OnSpellStart() SurvivalItems:UseConsumable(self) 
 local function RegisterGenericShopItem(itemName)
     if not itemName or _G[itemName] then return end
     _G[itemName] = class({})
-    function _G[itemName]:GetIntrinsicModifierName()
+    _G[itemName].GetIntrinsicModifierName = function(self)
         return "modifier_item_sirv_generic"
     end
-    function _G[itemName]:OnSpellStart()
+    _G[itemName].OnSpellStart = function(self)
         SurvivalItems:UseConsumable(self)
     end
 end
